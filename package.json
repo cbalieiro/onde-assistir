@@ -2,9 +2,21 @@
   "name": "SAP005-midterm-hackthon",
   "version": "1.0.0",
   "description": "* [Prefácio](#prefácio)\r * [Resumo do projeto](#resumo-do-projeto)\r * [Considerações gerais](#considerações-gerais)\r * [Objetivos de aprendizagem](#objetivos-de-aprendizagem)\r * [Exemplo de projetos](#examplo-de-projetos)\r * [APIs](#apis)\r * [Entrega](#entrega)\r * [Dicas](#dicas)",
-  "main": "index.js",
+  "main": "src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "serve src/"
+  },
+  "dependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/plugin-transform-modules-commonjs": "^7.6.0",
+    "babel-jest": "^26.6.1",
+    "eslint": "^7.12.1",
+    "gh-pages": "^3.1.0",
+    "htmlhint": "^0.14.1",
+    "jest": "^26.6.1",
+    "opener": "^1.5.1",
+    "serve": "^11.0.0"
   },
   "repository": {
     "type": "git",

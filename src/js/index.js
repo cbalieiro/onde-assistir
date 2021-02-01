@@ -1,11 +1,11 @@
-import data from '../../utils/config.js';
+import data from '../utils/config.js';
 import {
   searchAPI
 } from './API.js';
 import {
   templateAllCards,
   templateProvider
-} from '../../components/cardTemplate.js';
+} from '../components/cardTemplate.js';
 
 const dbObject = data.dataBase;
 const {
