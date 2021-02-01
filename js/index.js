@@ -1,4 +1,5 @@
 import data from '../utils/config.js';
+import { filterBy } from '../components/cardTemplate.js';
 import {
   searchAPI
 } from './API.js';
@@ -58,3 +59,14 @@ const getWatchProvider = (array) => {
       })
   }
 };
+
+movie.addEventListener('click', (event) => {
+  event.preventDefault();
+  filterBy(movie, arrayMovieAndTv)
+});
+  
+tv.addEventListener('click', (event) => {
+  event.preventDefault();
+  filterBy(tv, arrayMovieAndTv)
+});
+  
