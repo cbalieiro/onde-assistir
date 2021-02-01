@@ -22,10 +22,23 @@ const {
 let arrayMovieAndTv = [];
 let arrayProviders = [];
 
-const write = 'homem aranha';
-const search = `&query=${write.replaceAll(' ', '%20')}`;
+const inputUser = document.querySelector("#search-input");
 
-let urlSearch = `${baseURL}${searchMulti}${apiKey}${language}${search}`;
+inputUser.addEventListener("keyup", () => {
+  let inputValue = inputUser.value.toLowerCase();
+  let search = `&query=${inputValue.replaceAll(' ', '%20')}`;
+  let urlSearch = `${baseURL}${searchMulti}${apiKey}${language}${search}`;
+  searchAPI(urlSearch)
+    .then((data) => {
+      templateAllCards(data.results)
+      return arrayMovieAndTv = data.results;
+    })
+    .then((data) => {
+      return getWatchProvider(data)
+  
+    })
+})
+
 
 const getWatchProvider = (array) => {
   for (let index of array) {
@@ -47,24 +60,13 @@ const getWatchProvider = (array) => {
   }
 };
 
-searchAPI(urlSearch)
-  .then((data) => {
-    templateAllCards(data.results)
-    return arrayMovieAndTv = data.results;
-  })
-  .then((data) => {
-    return getWatchProvider(data)
-
-  })
-
-
-  movie.addEventListener('click', (event) => {
-    event.preventDefault();
-    filterBy(movie, arrayMovieAndTv)
-  });
+movie.addEventListener('click', (event) => {
+  event.preventDefault();
+  filterBy(movie, arrayMovieAndTv)
+});
   
-  tv.addEventListener('click', (event) => {
-    event.preventDefault();
-    filterBy(tv, arrayMovieAndTv)
-  });
+tv.addEventListener('click', (event) => {
+  event.preventDefault();
+  filterBy(tv, arrayMovieAndTv)
+});
   
