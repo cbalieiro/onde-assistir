@@ -1,16 +1,29 @@
-import data from '../../utils/config.js'
+import data from '../../utils/config.js';
+import { searchAPI } from './API.js';
+import { templateAllCards } from '../../components/cardTemplate.js';
 
 const dbObject = data.dataBase;
-const { apiKey, baseURL, baseImageURL, imageSize, language, searchMulti, watchProviders } = dbObject;
+const {
+  apiKey,
+  baseURL,
+  baseImageURL,
+  imageSize,
+  language,
+  searchMulti,
+  watchProviders,
+} = dbObject;
 
-const write = "homem aranha de volta ao lar"
-const search = `&query=${write.replaceAll(" ","%20")}`
-const resultSearch = document.querySelector("#page-main")
+let arrayMovieAndTv = []
 
-let urlSearch = `${baseURL}${searchMulti}${apiKey}${language}${search}`
+const write = 'homem aranha de volta ao lar';
+const search = `&query=${write.replaceAll(' ', '%20')}`;
 
-const searchUser = () => {
-    fetch(urlSearch)
+let urlSearch = `${baseURL}${searchMulti}${apiKey}${language}${search}`;
+
+const getWatchProvider = (array) => {
+  for (let index of array) {
+    let urlProvider = `${baseURL}${indice.media_type}/${indice.id}/${watchProviders}${apiKey}`
+    fetch(urlProvider)
     .then(result=>result.json())
     .then((searchReturn)=>{
         console.log(searchReturn);
@@ -20,4 +33,11 @@ const searchUser = () => {
     })
 };
 
-searchUser()
+searchAPI(urlSearch)
+  .then((data) => {
+  templateAllCards(data.results)
+  return arrayMovieAndTv = data.results;
+  })
+  .then((data) =>{
+    return getWatchProvider(data)
+  })
