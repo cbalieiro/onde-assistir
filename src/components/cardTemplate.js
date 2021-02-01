@@ -26,10 +26,17 @@ export const templateAllCards = (array) => {
 
 export const templateProvider = (array) => {
   for (let index of array) {
-    if (document.getElementById(`${index.id}`)) {
+   if (document.getElementById(`${index.id}`)) {
+    if(index.providers.flatrate === undefined) {
       document.getElementById(`${index.id}`).innerHTML = ` 
-    <p> Stream </p>     
-    `;
+        <p> Não há serviço dispoível no momento de Stream Gratuito no Brasil para esse título.</p>  
+     `;
+    } else {
+       document.getElementById(`${index.id}`).innerHTML = ` 
+        <p> Stream </p>
+        <p> ${index.providers.flatrate}<p>   
+     `;
+    }
     }
   }
 }
