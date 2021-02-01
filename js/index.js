@@ -1,5 +1,6 @@
 import data from '../utils/config.js';
 import { filterBy } from '../components/cardTemplate.js';
+import { templateButtons } from '../components/buttons.js';
 import {
   searchAPI
 } from './API.js';
@@ -62,11 +63,12 @@ const getWatchProvider = (array) => {
 
 movie.addEventListener('click', (event) => {
   event.preventDefault();
+  templateButtons();
   filterBy(movie, arrayMovieAndTv)
 });
-  
+
 tv.addEventListener('click', (event) => {
   event.preventDefault();
+  templateButtons();
   filterBy(tv, arrayMovieAndTv)
 });
-  
