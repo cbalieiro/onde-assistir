@@ -1,4 +1,4 @@
-import data from '../../utils/config.js'
+import data from '../utils/config.js'
 
 const dbObject = data.dataBase;
 const {
