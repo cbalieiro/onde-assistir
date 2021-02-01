@@ -13,3 +13,39 @@ html {
   font-family: 'Work Sans', sans-serif;
   font-size: 16px;
 }
+
+/* PÁGINA HOME */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0 ;
+}
+
+.logo {
+  width: 8rem;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  width: 65vw;
+  border-radius: 3rem;
+  border: solid 0.15rem #F2B705;
+  font-family: 'Work Sans', sans-serif;
+  padding: 0.3rem;
+}
+
+.search-icon {
+  color: #F2B705;
+}
+
+/* CENTRO */
+.navbar {
+  text-align: center;
+}
+
+/* RODAPÉ */
+.footer-about {
+
+}
