@@ -33,5 +33,8 @@ export const templateProvider = (array) => {
     }
   }
 }
-
+export const filterBy = ((dataType, array) => {
+  const filter = array.filter(type => type.media_type == dataType.value);
+  templateAllCards(filter);
+});
 /* <img src="${baseImageURL}${imageSize}${index.providers[0]['logo_path']}" width="40px">  */
