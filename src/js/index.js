@@ -1,22 +1,23 @@
-import data from '../../utils/config.js'
+import data from '../../utils/config.js';
+import { searchAPI } from './API.js';
+import { templateAllCards } from '../../components/cardTemplate.js';
 
 const dbObject = data.dataBase;
-const { apiKey, baseURL, baseImageURL, imageSize, language, searchMulti, watchProviders } = dbObject;
+const {
+  apiKey,
+  baseURL,
+  baseImageURL,
+  imageSize,
+  language,
+  searchMulti,
+  watchProviders,
+} = dbObject;
 
-const write = "homem aranha de volta ao lar"
-const search = `&query=${write.replaceAll(" ","%20")}`
-const resultSearch = document.querySelector("#page-main")
+const write = 'homem aranha de volta ao lar';
+const search = `&query=${write.replaceAll(' ', '%20')}`;
 
-let urlSearch = `${baseURL}${searchMulti}${apiKey}${language}${search}`
+let urlSearch = `${baseURL}${searchMulti}${apiKey}${language}${search}`;
 
-const searchUser = () => {
-    fetch(urlSearch)
-    .then(result=>result.json())
-    .then((searchReturn)=>{
-        resultSearch.innerHTML = `
-        <img class="imagePoster" src="${baseImageURL}${imageSize}${searchReturn.results[0]['poster_path']}" width="150px">
-        `
-    })
-};
-
-searchUser()
+searchAPI(urlSearch).then((data) => {
+  return templateAllCards(data.results);
+});
