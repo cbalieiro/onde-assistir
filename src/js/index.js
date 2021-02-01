@@ -13,6 +13,7 @@ const searchUser = () => {
     fetch(urlSearch)
     .then(result=>result.json())
     .then((searchReturn)=>{
+        console.log(searchReturn);
         resultSearch.innerHTML = `
         <img class="imagePoster" src="${baseImageURL}${imageSize}${searchReturn.results[0]['poster_path']}" width="150px">
         `
