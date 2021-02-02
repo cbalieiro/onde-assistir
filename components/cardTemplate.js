@@ -26,7 +26,7 @@ export const templateAllCards = (array) => {
 
 export const templateProvider = (array) => {
   for (let index of array) {
-    console.log(index.providers.flatrate)
+    //console.log(index.providers.flatrate)
     if(index.providers.flatrate == undefined) {
       if (document.getElementById(`${index.id}`)) {
         document.getElementById(`${index.id}`).innerHTML = `
