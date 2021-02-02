@@ -159,6 +159,13 @@ button, input {
   margin: 5vw;
 }
 
+.photos-devs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
 .photo-akemi,
 .photo-bianca,
 .photo-camila,
@@ -166,7 +173,15 @@ button, input {
 .photo-hadassa,
 .photo-kauana,
 .photo-lucila { 
-  width: 3em;
+  width: 5em;
   border-radius: 50%;
-  margin-left: 10%;
+  padding: 10%;
+}
+
+@media (min-width: 500px) {
+  .about-us {
+    max-width: 390px;
+    align-items: center;
+    margin: auto;
+  }
 }
