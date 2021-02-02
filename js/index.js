@@ -24,6 +24,8 @@ let arrayMovieAndTv = [];
 let arrayProviders = [];
 
 const inputUser = document.querySelector("#search-input");
+
+const footer = document.querySelector('#footer');
 const movie = document.getElementById("movie");
 const tv = document.getElementById("tv")
 
@@ -53,6 +55,7 @@ inputUser.addEventListener("keyup", () => {
   let urlSearch = `${baseURL}${searchMulti}${apiKey}${language}${search}`;
   searchAPI(urlSearch)
     .then((data) => {
+      footer.style.position = 'static';
       let arrayFilter = data.results
       arrayMovieAndTv = arrayFilter.filter((array) =>{
         return array.media_type !== "person";
