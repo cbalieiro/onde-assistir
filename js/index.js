@@ -105,4 +105,3 @@ function clearFooter() {
     footerTemplate.removeChild(footerTemplate.firstChild);
   }
 };
-
