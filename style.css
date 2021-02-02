@@ -148,7 +148,7 @@ button, input {
 
 /* CRÉDITOS  */
 .about-us {
-  height: 410px;
+  height: 420px;
   width: 70vw;
   border: solid 0.15rem #F2B705;
   margin: 15% auto;
@@ -168,6 +168,7 @@ button, input {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .photo-akemi,
@@ -177,7 +178,7 @@ button, input {
 .photo-hadassa,
 .photo-kauana,
 .photo-lucila { 
-  width: 5em;
+  width: 4.8em;
   border-radius: 50%;
   padding: 10%;
 }
@@ -201,7 +202,7 @@ body .itemActive {
   cursor: pointer;
   color: #F2B705;
   text-align: center;
-  margin-top: 15px;
+  margin-top: 3vw;
 }
 
 @media (max-width: 350px) {
