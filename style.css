@@ -14,7 +14,6 @@ html {
   width: 100%;
   font-family: 'Work Sans', sans-serif;
   font-size: 16px;
-  font-weight: 500;
 }
 
 body {
@@ -30,7 +29,7 @@ body {
 }
 
 .logo {
-  width: 8rem;
+  width: 45vw;
   height: auto;
   margin-bottom: 1rem;
 }
@@ -48,25 +47,24 @@ body {
 }
 
 .navbar {
-  display: flex;
-  flex-direction: column;
+  margin: 1.5rem 0;
 }
 
 .nav-item {
-  padding: 1rem 0;
+  background-size: 100% 140%;
+  padding: 0.7rem 0;
   text-transform: uppercase;
   text-align: center;
-  letter-spacing: 0.1rem;
-  color: #393859;
-  
+  letter-spacing: 0.3rem;
+  color: #fff;
 }
 
 .nav-item-movies {
-  background-color: #999;
+  background-image: linear-gradient(to top, #393859, #51CFAB);
 }
 
 .nav-item-series {
-  background-color: #777;
+  background-image: linear-gradient(to top, #393859, #E34646);
 }
 
 /* RODAPÉ */
