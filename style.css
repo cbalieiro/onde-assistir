@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 16px;
+}
+
+/* PÁGINA HOME */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0 ;
+}
+
+.logo {
+  width: 8rem;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  width: 65vw;
+  border-radius: 3rem;
+  border: solid 0.15rem #F2B705;
+  font-family: 'Work Sans', sans-serif;
+  padding: 0.3rem;
+}
+
+.search-icon {
+  color: #F2B705;
+}
+
+/* CENTRO */
+.navbar {
+  text-align: center;
+}
+
+/* RODAPÉ */
+.footer-about {
+
+}

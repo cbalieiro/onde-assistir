@@ -5,29 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Onde Assistir?</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
-<body>
-  <header>
-    <img id="logo" src="">
 
-    <input type="text" id="search-input">
+<body>
+  <header class="header">
+    <img id="logo" class="logo" src="../src/img/Logo.png" alt="Logo Onde Assistir?">
+    <i class="fas fa-search search-icon">
+      <input type="text" id="search-input" class="search-input"></i>
   </header>
 
-    <nav>
-      <div id="movies">Filmes
-        <button id="movie" value="movie">Filmes</button>
-      </div>
-      <div id="series">Séries
-        <button id="tv" value="tv">Séries</button>  
-      </div>
-    </nav>
-    
-    <!-- <div id='button-genres'></div> -->
+  <nav class="navbar">
+    <div id="movie" class="nav-item-movie" value="movie">Filmes</div>
+    <div id="tv" class="nav-item-tv" value="tv">Séries</div>  
+  </nav>
+
   <main id="page-main">
   </main>
 
   <footer>
-    <p id="footer-about">Sobre nós</p>
+    <p id="footer-about" class="footer-about">Sobre nós</p>
   </footer>
 
   <script src="./js/index.js" type="module"></script>

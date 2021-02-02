@@ -24,6 +24,8 @@ let arrayMovieAndTv = [];
 let arrayProviders = [];
 
 const inputUser = document.querySelector("#search-input");
+const movie = document.getElementById("movie");
+const tv = document.getElementById("tv")
 
 inputUser.addEventListener("keyup", () => {
   clearDOM()
@@ -60,6 +62,7 @@ const getWatchProvider = (array) => {
       })
   }
 };
+
 
 movie.addEventListener('click', (event) => {
   event.preventDefault();
