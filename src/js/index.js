@@ -24,6 +24,7 @@ let arrayMovieAndTv = [];
 let arrayProviders = [];
 
 const inputUser = document.querySelector("#search-input");
+const footer = document.querySelector('#footer');
 
 inputUser.addEventListener("keyup", () => {
   let inputValue = inputUser.value.toLowerCase();
@@ -31,6 +32,7 @@ inputUser.addEventListener("keyup", () => {
   let urlSearch = `${baseURL}${searchMulti}${apiKey}${language}${search}`;
   searchAPI(urlSearch)
     .then((data) => {
+      footer.style.position = 'static';
       templateAllCards(data.results)
       return arrayMovieAndTv = data.results;
     })
