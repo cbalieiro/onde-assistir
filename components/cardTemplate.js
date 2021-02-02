@@ -41,9 +41,9 @@ export const templateProvider = (array) => {
         arrayflatrate.forEach(element => {
           let cardsProviders = document.getElementById(`${index.id}`);
           cardsProviders.classList.add('provider-wrap');
-          // let cardProvider = document.createElement('div');
-          // cardsProviders.appendChild(cardProvider);
-          cardsProviders.innerHTML =
+          let cardProvider = document.createElement('div');
+          cardsProviders.appendChild(cardProvider);
+          cardProvider.innerHTML =
             `<img class="provider-img" src="${baseImageURL}${imageSize}${element.logo_path}"> `;
           element;
         });
