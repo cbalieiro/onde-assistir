@@ -25,7 +25,6 @@ let arrayProviders = [];
 
 const inputUser = document.querySelector("#search-input");
 
-const footer = document.querySelector('#footer');
 const movie = document.getElementById("movie");
 const tv = document.getElementById("tv");
 
@@ -55,7 +54,6 @@ inputUser.addEventListener("keyup", () => {
   let urlSearch = `${baseURL}${searchMulti}${apiKey}${language}${search}`;
   searchAPI(urlSearch)
     .then((data) => {
-      footer.style.position = 'static';
       let arrayFilter = data.results
       arrayMovieAndTv = arrayFilter.filter((array) =>{
         return array.media_type !== "person";
@@ -75,6 +73,8 @@ movie.addEventListener('click', (event) => {
   clearDOM()
   templateButtons();
   filterBy(movie, arrayMovieAndTv, arrayProviders)
+  movie.classList.add('nav-item-selected');
+  tv.classList.remove('nav-item-selected');
 });
 
 tv.addEventListener('click', (event) => {
@@ -83,6 +83,8 @@ tv.addEventListener('click', (event) => {
   clearDOM()
   templateButtons();
   filterBy(tv, arrayMovieAndTv, arrayProviders)
+  tv.classList.add('nav-item-selected');
+  movie.classList.remove('nav-item-selected');
 });
 
 function clearDOM() {
