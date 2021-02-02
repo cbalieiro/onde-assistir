@@ -53,7 +53,6 @@ export const templateProvider = (array) => {
 
 export const filterBy = ((dataType, genrer, arraySearch, arrayProvider) => {
   const filter = filterMethod(arraySearch,"==", dataType.id);
-  console.log(filter);
   const filterGenrer1 = filterGenrer(filter,"==", genrer);
   console.log(filterGenrer1);
   templateAllCards(filterGenrer1);
