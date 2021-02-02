@@ -1,6 +1,7 @@
 import data from '../utils/config.js';
 import { filterBy } from '../components/cardTemplate.js';
-import { templateButtons } from '../components/buttons.js';
+import { templateButtonsMovie } from '../components/buttonsMovie.js';
+import { templateButtonsSeries } from '../components/buttonsSeries.js';
 import {
   searchAPI
 } from './API.js';
@@ -78,7 +79,7 @@ inputUser.addEventListener("keyup", () => {
 movie.addEventListener('click', (event) => {
   event.preventDefault();
   clearDOM()
-  templateButtons();
+  templateButtonsMovie();
   filterBy(movie, arryaMovieAndTvNotNull, arrayProviders)
   movie.classList.add('nav-item-selected');
   tv.classList.remove('nav-item-selected');
@@ -87,7 +88,7 @@ movie.addEventListener('click', (event) => {
 tv.addEventListener('click', (event) => {
   event.preventDefault();
   clearDOM()
-  templateButtons();
+  templateButtonsSeries();
   filterBy(tv, arryaMovieAndTvNotNull, arrayProviders)
   tv.classList.add('nav-item-selected');
   movie.classList.remove('nav-item-selected');
