@@ -24,6 +24,7 @@ const {
 
 let arryaMovieAndTvNotNull = [];
 let arrayProviders = [];
+let arrayTrends = [];
 
 const inputUser = document.querySelector("#search-input");
 const movie = document.getElementById("movie");
@@ -75,7 +76,6 @@ inputUser.addEventListener("keyup", () => {
     })
 })
 
-console.log(arryaMovieAndTvNotNull);
 movie.addEventListener('click', (event) => {
   event.preventDefault();
   clearDOM()
@@ -111,7 +111,6 @@ footerEvent.addEventListener('click', (event) => {
   clearFooter();
   modalFooter();
 })
-
 
 
 function clearFooter() {
