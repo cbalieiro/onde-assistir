@@ -38,7 +38,7 @@ body {
   width: 65vw;
   background: url(./img/search-icon.png) no-repeat 0.5rem 0.3rem #fff;
   border-radius: 3rem;
-  border: solid 0.15rem #F2B705;
+  border: solid 0.15rem #393859;
   padding: 0.3rem 0.5rem;
   padding-left: 2rem;
   font-family: 'Work Sans', sans-serif;
@@ -51,21 +51,28 @@ body {
 }
 
 .nav-item {
-  background-size: 100% 140%;
+  background-size: 100% 190%;
   padding: 0.7rem 0;
   text-transform: uppercase;
   text-align: center;
+  font-weight: 500;
   letter-spacing: 0.3rem;
   color: #fff;
+  background-color: #393859;
 }
 
 .nav-item-movies {
-  background-image: linear-gradient(to top, #393859, #51CFAB);
+  background-image: linear-gradient(to top, #393859, #4BBF9E);
 }
 
 .nav-item-series {
   background-image: linear-gradient(to top, #393859, #E34646);
 }
+
+.nav-item-selected {
+  background-image: none;
+}
+
 
 /* RODAPÉ */
 .footer-about {
