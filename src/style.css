@@ -47,7 +47,7 @@ button, input {
 
 .logo {
   width: 45vw;
-  height: auto;
+  max-height: 45vw;
   margin-bottom: 1rem;
 }
 
