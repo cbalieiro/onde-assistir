@@ -20,7 +20,7 @@ const {
   watchProviders,
 } = dbObject;
 
-let arrayMovieAndTv = [];
+let arryaMovieAndTvNotNull = [];
 let arrayProviders = [];
 
 const inputUser = document.querySelector("#search-input");
@@ -55,11 +55,14 @@ inputUser.addEventListener("keyup", () => {
   searchAPI(urlSearch)
     .then((data) => {
       let arrayFilter = data.results
-      arrayMovieAndTv = arrayFilter.filter((array) =>{
+      let arrayMovieAndTv = arrayFilter.filter((array) =>{
         return array.media_type !== "person";
       })
-      templateAllCards(arrayMovieAndTv)
-      return arrayMovieAndTv;
+      arryaMovieAndTvNotNull = arrayMovieAndTv.filter((array) => {
+        return array.poster_path !== null;
+      })
+      templateAllCards(arryaMovieAndTvNotNull)
+      return arryaMovieAndTvNotNull;
     })
     .then((data) => {
       return getWatchProvider(data)
@@ -71,7 +74,7 @@ movie.addEventListener('click', (event) => {
   event.preventDefault();
   clearDOM()
   templateButtons();
-  filterBy(movie, arrayMovieAndTv, arrayProviders)
+  filterBy(movie, arryaMovieAndTvNotNull, arrayProviders)
   movie.classList.add('nav-item-selected');
   tv.classList.remove('nav-item-selected');
 });
@@ -80,7 +83,7 @@ tv.addEventListener('click', (event) => {
   event.preventDefault();
   clearDOM()
   templateButtons();
-  filterBy(tv, arrayMovieAndTv, arrayProviders)
+  filterBy(tv, arryaMovieAndTvNotNull, arrayProviders)
   tv.classList.add('nav-item-selected');
   movie.classList.remove('nav-item-selected');
 });
