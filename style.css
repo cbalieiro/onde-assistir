@@ -23,6 +23,7 @@ body {
 
 button, input {
   font-family: 'Work Sans', sans-serif;
+  outline: none;
 }
 
 /* PÁGINA HOME */
@@ -47,7 +48,6 @@ button, input {
   padding: 0.3rem 0.5rem;
   padding-left: 2rem;
   font-size: 1rem;
-  outline: none;
 }
 
 .navbar {
@@ -71,13 +71,30 @@ button, input {
 }
 
 .nav-item-series {
-  background-image: linear-gradient(to top, #393859, #E34646);
+  background-image: linear-gradient(to top, #393859, #5785e0);
 }
 
 .nav-item-selected {
   background-size: 100% 110%;
   background-image: linear-gradient(to bottom, #393859, #1E1D30);
   transition: ease-in-out 0.3s;
+}
+
+/* GÊNEROS */
+.section-genres {
+  display: flex;
+  flex-direction: column;
+  width: 13rem;
+}
+
+.genre-btn {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: #393859;
+  border: none;
+  border-radius: 3rem;
+  font-size: 1rem;
+  color: #fff;
 }
 
 
