@@ -41,10 +41,13 @@ export const templateProvider = (array) => {
   }
 }
 
-export const filterBy = ((dataType, array, otherArray) => {
-  const filter = array.filter(type => type.media_type == dataType.value);
-  templateProvider(otherArray)
+export const filterBy = ((dataType, arraySearch, arrayProvider) => {
+  //console.log(arraySearch)
+  console.log(dataType.id)
+  const filter = arraySearch.filter(type => type.media_type == dataType.id);
+  console.log(filter)
   templateAllCards(filter);
+  templateProvider(arrayProvider);
 });
 
 // if (document.getElementById(`${index.id}`)) {
