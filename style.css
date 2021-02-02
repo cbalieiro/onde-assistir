@@ -12,12 +12,17 @@
 html {
   height: 100%;
   width: 100%;
+  scroll-behavior: smooth;
   font-family: 'Work Sans', sans-serif;
   font-size: 16px;
 }
 
 body {
   background-color: #f4f4f4;
+}
+
+button, input {
+  font-family: 'Work Sans', sans-serif;
 }
 
 /* PÁGINA HOME */
@@ -41,7 +46,6 @@ body {
   border: solid 0.15rem #393859;
   padding: 0.3rem 0.5rem;
   padding-left: 2rem;
-  font-family: 'Work Sans', sans-serif;
   font-size: 1rem;
   outline: none;
 }
@@ -59,6 +63,7 @@ body {
   letter-spacing: 0.3rem;
   color: #fff;
   background-color: #393859;
+  transition: ease-in-out 0.3s;
 }
 
 .nav-item-movies {
@@ -70,7 +75,9 @@ body {
 }
 
 .nav-item-selected {
-  background-image: none;
+  background-size: 100% 110%;
+  background-image: linear-gradient(to bottom, #393859, #1E1D30);
+  transition: ease-in-out 0.3s;
 }
 
 
