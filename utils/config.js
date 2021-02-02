@@ -10,14 +10,5 @@ export default {
     }
 };
 
-export default {
-  dataBaseGenrer: {
-    apiKey: "api_key=9c2c51641b3f3b8d35ac3160b94bf80d",
-    baseURL: "https://api.themoviedb.org/3/",
-    baseImageURL: "https://image.tmdb.org/t/p/",
-    imageSize: "original",
-    language: "&language=pt-br",
-    endPoint: "trending/all/week?",
-    watchProviders: "watch/providers?",
-  }
-};
+export const dataTrends = "https://api.themoviedb.org/3/trending/all/week?api_key=9c2c51641b3f3b8d35ac3160b94bf80d";
+

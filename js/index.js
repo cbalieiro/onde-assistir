@@ -1,6 +1,7 @@
-import data from '../utils/config.js';
-import { filterBy } from '../components/cardTemplate.js';
-import { templateButtons } from '../components/buttons.js';
+import data, {dataTrends} from '../utils/config.js';
+import { filterBy, filterByGenrer } from '../components/cardTemplate.js';
+import { templateButtonsMovie } from '../components/buttonsMovie.js';
+import { templateButtonsSeries } from '../components/buttonsSeries.js';
 import {
   searchAPI
 } from './API.js';
@@ -78,30 +79,38 @@ inputUser.addEventListener("keyup", () => {
 
 movie.addEventListener('click', (event) => {
   event.preventDefault();
+  getTrends();
   clearDOM()
-  templateButtons();
+  templateButtonsMovie();
+  filterBy(movie, arryaMovieAndTvNotNull, arrayProviders)
   movie.classList.add('nav-item-selected');
   tv.classList.remove('nav-item-selected');
   const buttonSelector = document.querySelectorAll('.genre-btn');
   buttonSelector.forEach(button => {
     button.addEventListener('click', event => {
-      console.log('aqui')
-      filterBy(movie, button.attributes.value.nodeValue, arryaMovieAndTvNotNull, arrayProviders)
+      event.preventDefault();
+      clearDOM();
+      const genrerType = button.attributes.value.nodeValue;
+      filterByGenrer(movie, genrerType, arrayTrends, arrayProviders);
     })
   });
 });
 
 tv.addEventListener('click', (event) => {
-  event.preventDefault();console.log(arryaMovieAndTvNotNull);
-  clearDOM()
-  templateButtons();
+  event.preventDefault();
+  getTrends();
+  clearDOM();
+  templateButtonsSeries();
+  filterBy(tv, arryaMovieAndTvNotNull, arrayProviders)
   tv.classList.add('nav-item-selected');
   movie.classList.remove('nav-item-selected');
   const buttonSelector = document.querySelectorAll('.genre-btn');
   buttonSelector.forEach(button => {
     button.addEventListener('click', event => {event.preventDefault();
+      event.preventDefault();
+      clearDOM();
       const genrerType = button.attributes.value.nodeValue;
-      filterBy(tv, genrerType , arryaMovieAndTvNotNull, arrayProviders)
+      filterByGenrer(tv, genrerType , arrayTrends, arrayProviders);
     })
   });
 });
@@ -119,3 +128,13 @@ function clearFooter() {
     footerTemplate.removeChild(footerTemplate.firstChild);
   }
 };
+
+function getTrends(){
+  searchAPI(dataTrends)
+  .then((data) => {
+    let arrayFilter = data.results
+    let arrayMovieAndTv = filterMethod(arrayFilter,"!==","person");
+    arrayTrends = filterMethod(arrayMovieAndTv,"!==",null);
+    return arrayTrends;
+  })
+}
