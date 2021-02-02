@@ -12,12 +12,18 @@
 html {
   height: 100%;
   width: 100%;
+  scroll-behavior: smooth;
   font-family: 'Work Sans', sans-serif;
   font-size: 16px;
 }
 
 body {
   background-color: #f4f4f4;
+}
+
+button, input {
+  font-family: 'Work Sans', sans-serif;
+  outline: none;
 }
 
 /* PÁGINA HOME */
@@ -38,12 +44,10 @@ body {
   width: 65vw;
   background: url(./img/search-icon.png) no-repeat 0.5rem 0.3rem #fff;
   border-radius: 3rem;
-  border: solid 0.15rem #F2B705;
+  border: solid 0.15rem #393859;
   padding: 0.3rem 0.5rem;
   padding-left: 2rem;
-  font-family: 'Work Sans', sans-serif;
   font-size: 1rem;
-  outline: none;
 }
 
 .navbar {
@@ -51,21 +55,48 @@ body {
 }
 
 .nav-item {
-  background-size: 100% 140%;
+  background-size: 100% 190%;
   padding: 0.7rem 0;
   text-transform: uppercase;
   text-align: center;
+  font-weight: 500;
   letter-spacing: 0.3rem;
   color: #fff;
+  background-color: #393859;
+  transition: ease-in-out 0.3s;
 }
 
 .nav-item-movies {
-  background-image: linear-gradient(to top, #393859, #51CFAB);
+  background-image: linear-gradient(to top, #393859, #4BBF9E);
 }
 
 .nav-item-series {
-  background-image: linear-gradient(to top, #393859, #E34646);
+  background-image: linear-gradient(to top, #393859, #5785e0);
 }
+
+.nav-item-selected {
+  background-size: 100% 110%;
+  background-image: linear-gradient(to bottom, #393859, #1E1D30);
+  transition: ease-in-out 0.3s;
+}
+
+/* GÊNEROS */
+.section-genres {
+  display: flex;
+  flex-direction: column;
+  width: 13rem;
+}
+
+.genre-btn {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: #393859;
+  border: none;
+  border-radius: 3rem;
+  font-size: 1rem;
+  color: #fff;
+}
+
 
 /* RODAPÉ */
 .footer-about {
