@@ -1,5 +1,5 @@
 import data from '../utils/config.js'
-import { filterMethod } from "../js/data.js"
+import { filterMethod , links } from "../js/data.js"
 
 const dbObject = data.dataBase;
 const {
@@ -39,12 +39,18 @@ export const templateProvider = (array) => {
         document.getElementById(`${index.id}`).innerHTML = ``;
         const arrayflatrate = index.results.BR.flatrate;
         arrayflatrate.forEach(element => {
+          console.log(element.logo_path);
+          console.log(element.provider_name);
+          let linksPath = links(element.logo_path);
           let cardsProviders = document.getElementById(`${index.id}`);
           cardsProviders.classList.add('provider-wrap');
           let cardProvider = document.createElement('div');
           cardsProviders.appendChild(cardProvider);
           cardProvider.innerHTML =
-            `<img class="provider-img" src="${baseImageURL}${imageSize}${element.logo_path}"> `;
+            `<a href="${linksPath}" target="_blank"> 
+              <img class="provider-img" src="${baseImageURL}${imageSize}${element.logo_path}">
+            </a>
+            `;
           element;
         });
       }
