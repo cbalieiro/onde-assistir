@@ -1,7 +1,8 @@
 
 export const modalFooter = (() => {
     let footerTemplate = document.querySelector('#footer-modal');
-    let creatAboutUs = document.createElement('div');
+    let creatAboutUs = document.createElement('section');
+    footerTemplate.classList.add('itemActive');
     creatAboutUs.classList.add('about-us');
     footerTemplate.appendChild(creatAboutUs);
     creatAboutUs.innerHTML = `
@@ -21,6 +22,7 @@ export const modalFooter = (() => {
     const btnClose = footerTemplate.querySelector('#btnclose');
     btnClose.addEventListener('click', (event) => {
     event.preventDefault();
+    footerTemplate.classList.remove('itemActive');
     creatAboutUs.style.display = "none";
     creatAboutUs.innerHTML = "";
     })
