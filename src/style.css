@@ -26,7 +26,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2rem 0 ;
+  margin: 1rem 0;
 }
 
 .logo {
@@ -48,7 +48,25 @@ body {
 }
 
 .navbar {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item {
+  padding: 1rem 0;
+  text-transform: uppercase;
   text-align: center;
+  letter-spacing: 0.1rem;
+  color: #393859;
+  
+}
+
+.nav-item-movies {
+  background-color: #999;
+}
+
+.nav-item-series {
+  background-color: #777;
 }
 
 /* RODAPÉ */
