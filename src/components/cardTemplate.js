@@ -37,7 +37,6 @@ export const templateProvider = (array) => {
              ` <p> Stream </p>`; 
              const arrayflatrate = index.results.BR.flatrate; 
              arrayflatrate.forEach(element => {
-               console.log(element);
                let cardsProviders = document.getElementById(`${index.id}`);
                let cardProvider =  document.createElement('div');
                cardsProviders.appendChild(cardProvider);
