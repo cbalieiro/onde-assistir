@@ -29,6 +29,24 @@ const footer = document.querySelector('#footer');
 const movie = document.getElementById("movie");
 const tv = document.getElementById("tv")
 
+const getWatchProvider = (array) => {
+  let arrayEmpty = []
+  for (let index of array) {
+    let urlProvider = `${baseURL}${index.media_type}/${index.id}/${watchProviders}${apiKey}`
+    searchAPI(urlProvider)
+      .then((searchReturn) => {
+        qualquer.push({
+          id: searchReturn.id,
+          results: searchReturn.results
+        });
+        return templateProvider(arrayProviders);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
+  return arrayProviders=arrayEmpty
+};
 
 inputUser.addEventListener("keyup", () => {
   clearDOM()
@@ -38,35 +56,18 @@ inputUser.addEventListener("keyup", () => {
   searchAPI(urlSearch)
     .then((data) => {
       footer.style.position = 'static';
-      templateAllCards(data.results)
-      return arrayMovieAndTv = data.results;
+      let arrayFilter = data.results
+      arrayMovieAndTv = arrayFilter.filter((array) =>{
+        return array.media_type !== "person";
+      })
+      templateAllCards(arrayMovieAndTv)
+      return arrayMovieAndTv;
     })
     .then((data) => {
       return getWatchProvider(data)
   
     })
 })
-
-
-const getWatchProvider = (array) => {
-  for (let index of array) {
-    let urlProvider = `${baseURL}${index.media_type}/${index.id}/${watchProviders}${apiKey}`
-    searchAPI(urlProvider)
-      .then((searchReturn) => {
-        let id = searchReturn.id;
-        let providers = searchReturn.results.BR;
-        arrayProviders.push({
-          id: id,
-          providers: providers
-        });
-        return templateProvider(arrayProviders);
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-  }
-};
-
 
 movie.addEventListener('click', (event) => {
   event.preventDefault();
@@ -87,4 +88,4 @@ function clearDOM() {
   while (cards.firstChild) {
     cards.removeChild(cards.firstChild);
   }
-}
+};
