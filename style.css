@@ -47,9 +47,11 @@ body {
   outline: none;
 }
 
-.navbar {
+.nav-container {
+  height: 50vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .nav-item {
