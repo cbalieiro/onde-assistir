@@ -20,15 +20,36 @@ const {
   watchProviders,
 } = dbObject;
 
-let arrayMovieAndTv = [];
+let arryaMovieAndTvNotNull = [];
 let arrayProviders = [];
 
 const inputUser = document.querySelector("#search-input");
 
+<<<<<<< HEAD
 const footer = document.getElementById('footer');
+=======
+>>>>>>> 43fd13e4098d5a981f600a180cf0e5951cc247be
 const movie = document.getElementById("movie");
-const tv = document.getElementById("tv")
+const tv = document.getElementById("tv");
 
+const getWatchProvider = (array) => {
+  let arrayEmpty = []
+  for (let index of array) {
+    let urlProvider = `${baseURL}${index.media_type}/${index.id}/${watchProviders}${apiKey}`
+    searchAPI(urlProvider)
+      .then((searchReturn) => {
+        arrayEmpty.push({
+          id: searchReturn.id,
+          results: searchReturn.results
+        });
+        return templateProvider(arrayProviders);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
+  return arrayProviders = arrayEmpty;
+};
 
 inputUser.addEventListener("keyup", () => {
   clearDOM()
@@ -37,9 +58,15 @@ inputUser.addEventListener("keyup", () => {
   let urlSearch = `${baseURL}${searchMulti}${apiKey}${language}${search}`;
   searchAPI(urlSearch)
     .then((data) => {
-      footer.style.position = 'static';
-      templateAllCards(data.results)
-      return arrayMovieAndTv = data.results;
+      let arrayFilter = data.results
+      let arrayMovieAndTv = arrayFilter.filter((array) =>{
+        return array.media_type !== "person";
+      })
+      arryaMovieAndTvNotNull = arrayMovieAndTv.filter((array) => {
+        return array.poster_path !== null;
+      })
+      templateAllCards(arryaMovieAndTvNotNull)
+      return arryaMovieAndTvNotNull;
     })
     .then((data) => {
       return getWatchProvider(data)
@@ -47,39 +74,22 @@ inputUser.addEventListener("keyup", () => {
     })
 })
 
-
-const getWatchProvider = (array) => {
-  for (let index of array) {
-    let urlProvider = `${baseURL}${index.media_type}/${index.id}/${watchProviders}${apiKey}`
-    searchAPI(urlProvider)
-      .then((searchReturn) => {
-        let id = searchReturn.id;
-        let providers = searchReturn.results.BR;
-        arrayProviders.push({
-          id: id,
-          providers: providers
-        });
-        return templateProvider(arrayProviders);
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-  }
-};
-
-
 movie.addEventListener('click', (event) => {
   event.preventDefault();
   clearDOM()
   templateButtons();
-  filterBy(movie, arrayMovieAndTv, arrayProviders)
+  filterBy(movie, arryaMovieAndTvNotNull, arrayProviders)
+  movie.classList.add('nav-item-selected');
+  tv.classList.remove('nav-item-selected');
 });
 
 tv.addEventListener('click', (event) => {
   event.preventDefault();
   clearDOM()
   templateButtons();
-  filterBy(tv, arrayMovieAndTv, arrayProviders)
+  filterBy(tv, arryaMovieAndTvNotNull, arrayProviders)
+  tv.classList.add('nav-item-selected');
+  movie.classList.remove('nav-item-selected');
 });
 
 function clearDOM() {
@@ -143,3 +153,4 @@ function clearDOM() {
 // const hiddenModal = () => {
 //   modal.classList.remove('itemActive');
 // }
+};
