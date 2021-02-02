@@ -12,36 +12,43 @@ const {
 } = dbObject;
 
 export const templateAllCards = (array) => {
-  let cards = '';
   for (let index of array) {
-    cards += ` 
-    <div class="show-cards">
+    let cards = document.querySelector("#page-main");
+    let card = document.createElement("section");
+    card.classList.add('show-cards')
+    cards.appendChild(card)
+    card.innerHTML = `
     <img class="imagePoster" src="${baseImageURL}${imageSize}${index.poster_path}" width="150px">
     <div id="${index.id}"></div>
-    </div>
     `;
   }
-  return (document.getElementById("page-main").innerHTML = cards);
 }
 
 export const templateProvider = (array) => {
   for (let index of array) {
-   if (document.getElementById(`${index.id}`)) {
-    if(index.providers.flatrate === undefined) {
-      document.getElementById(`${index.id}`).innerHTML = ` 
-        <p> Não há serviço dispoível no momento de Stream Gratuito no Brasil para esse título.</p>  
-     `;
-    } else {
-       document.getElementById(`${index.id}`).innerHTML = ` 
-        <p> Stream </p>
-        <p> ${index.providers.flatrate}<p>   
-     `;
-    }
-    }
+    console.log(index.providers.flatrate)
+    if(index.providers.flatrate == undefined) {
+      if (document.getElementById(`${index.id}`)) {
+        document.getElementById(`${index.id}`).innerHTML = `
+        <p> Não há serviço disponível no memento de Streaming Gratuito no Brasil para esse título</p>`;
+      }
+    } if (index.providers.flatrate != undefined) {
+        if (document.getElementById(`${index.id}`)) {
+          document.getElementById(`${index.id}`).innerHTML = `
+          <p> Stream </p>`;
+        }
+      }
   }
 }
-export const filterBy = ((dataType, array) => {
+
+export const filterBy = ((dataType, array, otherArray) => {
   const filter = array.filter(type => type.media_type == dataType.value);
+  templateProvider(otherArray)
   templateAllCards(filter);
 });
-/* <img src="${baseImageURL}${imageSize}${index.providers[0]['logo_path']}" width="40px">  */
+
+// if (document.getElementById(`${index.id}`)) {
+//  document.getElementById(`${index.id}`).innerHTML = ` 
+//    <p> Stream </p>   
+//    `;
+//  }
