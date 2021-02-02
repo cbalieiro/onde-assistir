@@ -1,4 +1,5 @@
 import data from '../utils/config.js'
+import { filterMethod } from "../js/data.js"
 
 const dbObject = data.dataBase;
 const {
@@ -51,13 +52,7 @@ export const templateProvider = (array) => {
 
 
 export const filterBy = ((dataType, arraySearch, arrayProvider) => {
-  const filter = arraySearch.filter(type => type.media_type == dataType.id);
+  const filter = filterMethod(arraySearch,"==", dataType.id)
   templateAllCards(filter);
   templateProvider(arrayProvider);
 });
-
-// if (document.getElementById(`${index.id}`)) {
-//  document.getElementById(`${index.id}`).innerHTML = ` 
-//    <p> Stream </p>   
-//    `;
-//  }

@@ -4,6 +4,7 @@ export const modalFooter = (() => {
     let creatAboutUs = document.createElement('div');
     creatAboutUs.classList.add('about-us');
     footerTemplate.appendChild(creatAboutUs);
+    creatAboutUs.innerHTML = "";
     creatAboutUs.innerHTML = `
     <p class="about-text"><i>Onde assitir?</i> foi desenvolvido durante o Midterm Hackathon da <b>Laboratória</b> em Janeiro de 2021 pelas desenvolvedoras:</p> 
     <a href="https://www.linkedin.com/in/akemimeka/"><img class="photo-akemi" src="./img/akemi.jpg" alt="foto desenvolvedora Akemi"></a>
