@@ -134,6 +134,7 @@ button, input {
   position: fixed;
   width: 100%;
   bottom: 0;
+  cursor: pointer;
 }
 
 .footer-text {
@@ -144,13 +145,16 @@ button, input {
   text-transform: uppercase;
   text-align: center;
 }
-/* ABOUT US  */
+
+/* CRÉDITOS  */
 .about-us {
-  height: 360px;
+  height: 420px;
   width: 70vw;
   border: solid 0.15rem #F2B705;
-  margin: 15%;
+  margin: 15% auto;
   border-radius: 10%;
+  box-shadow: 0 0 2em #3C3B37;
+  background-color: #f4f4f4;
 }
 
 .about-text {
@@ -164,6 +168,7 @@ button, input {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .photo-akemi,
@@ -173,9 +178,48 @@ button, input {
 .photo-hadassa,
 .photo-kauana,
 .photo-lucila { 
-  width: 5em;
+  width: 4.8em;
   border-radius: 50%;
   padding: 10%;
+}
+
+body .itemActive {
+  display: flex;
+}
+
+.modal-about{
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.btnclose {
+  font-size: 13px;
+  cursor: pointer;
+  color: #F2B705;
+  text-align: center;
+  margin-top: 3vw;
+}
+
+@media (max-width: 350px) {
+  .photo-akemi,
+  .photo-bianca,
+  .photo-camila,
+  .photo-carol,
+  .photo-hadassa,
+  .photo-kauana,
+  .photo-lucila { 
+    width: 4.3em;
+    border-radius: 50%;
+    padding: 10%;
+  }
+  .about-us {
+    max-height: 500px;
+  }
 }
 
 @media (min-width: 500px) {
