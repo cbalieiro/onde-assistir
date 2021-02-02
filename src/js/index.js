@@ -27,7 +27,7 @@ const inputUser = document.querySelector("#search-input");
 
 const footer = document.querySelector('#footer');
 const movie = document.getElementById("movie");
-const tv = document.getElementById("tv")
+const tv = document.getElementById("tv");
 
 const getWatchProvider = (array) => {
   let arrayEmpty = []
@@ -35,7 +35,7 @@ const getWatchProvider = (array) => {
     let urlProvider = `${baseURL}${index.media_type}/${index.id}/${watchProviders}${apiKey}`
     searchAPI(urlProvider)
       .then((searchReturn) => {
-        qualquer.push({
+        arrayEmpty.push({
           id: searchReturn.id,
           results: searchReturn.results
         });
@@ -71,6 +71,7 @@ inputUser.addEventListener("keyup", () => {
 
 movie.addEventListener('click', (event) => {
   event.preventDefault();
+  console.log("clicou movie")
   clearDOM()
   templateButtons();
   filterBy(movie, arrayMovieAndTv, arrayProviders)
@@ -78,6 +79,7 @@ movie.addEventListener('click', (event) => {
 
 tv.addEventListener('click', (event) => {
   event.preventDefault();
+  console.log("clicou serie")
   clearDOM()
   templateButtons();
   filterBy(tv, arrayMovieAndTv, arrayProviders)
