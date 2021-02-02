@@ -23,6 +23,7 @@ body {
 
 button, input {
   font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
   outline: none;
 }
 
@@ -71,7 +72,7 @@ button, input {
 }
 
 .nav-item-series {
-  background-image: linear-gradient(to top, #393859, #5785e0);
+  background-image: linear-gradient(to top, #393859, #684BBF);
 }
 
 .nav-item-selected {
@@ -84,19 +85,49 @@ button, input {
 .section-genres {
   display: flex;
   flex-direction: column;
-  width: 13rem;
+  align-items: center;
 }
 
 .genre-btn {
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  background-color: #393859;
+  display: flex;
+  justify-content: center;
+  width: 15rem;
+  margin-bottom: 2rem;
+  padding: 0.4rem;
   border: none;
   border-radius: 3rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  box-shadow: 3px 3px 8px -3px rgba(0,0,0,0.42);
+}
+
+.genre-action-movie {
+  background-color: #F2B705;
+}
+
+.genre-btn-light {
+  color: #393859;
+}
+
+.genre-btn-dark {
+  font-weight: 400;
   color: #fff;
 }
 
+.genre-action { background-color: #E1F4EF }
+.genre-adventure { background-color: #BBE7DB }
+.genre-animation { background-color: #95DAC6 }
+.genre-romance { background-color: #70CDB2 }
+.genre-comedy { background-color: #4BBF9E }
+.genre-drama { background-color: #389F81 }
+.genre-doc { background-color: #2A7963 }
+.genre-kids { background-color: #1D5344 }
+.genre-sci-fi { background-color: #102D25 }
+.genre-horror { background-color: #0C221C }
+
+.genre-emoji {
+  width: 1.4rem;
+  height: auto;
+}
 
 /* RODAPÉ */
 .footer-about {
