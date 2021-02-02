@@ -75,22 +75,35 @@ inputUser.addEventListener("keyup", () => {
     })
 })
 
+console.log(arryaMovieAndTvNotNull);
 movie.addEventListener('click', (event) => {
   event.preventDefault();
   clearDOM()
   templateButtons();
-  filterBy(movie, arryaMovieAndTvNotNull, arrayProviders)
   movie.classList.add('nav-item-selected');
   tv.classList.remove('nav-item-selected');
+  const buttonSelector = document.querySelectorAll('.genre-btn');
+  buttonSelector.forEach(button => {
+    button.addEventListener('click', event => {
+      console.log('aqui')
+      filterBy(movie, button.attributes.value.nodeValue, arryaMovieAndTvNotNull, arrayProviders)
+    })
+  });
 });
 
 tv.addEventListener('click', (event) => {
-  event.preventDefault();
+  event.preventDefault();console.log(arryaMovieAndTvNotNull);
   clearDOM()
   templateButtons();
-  filterBy(tv, arryaMovieAndTvNotNull, arrayProviders)
   tv.classList.add('nav-item-selected');
   movie.classList.remove('nav-item-selected');
+  const buttonSelector = document.querySelectorAll('.genre-btn');
+  buttonSelector.forEach(button => {
+    button.addEventListener('click', event => {event.preventDefault();
+      const genrerType = button.attributes.value.nodeValue;
+      filterBy(tv, genrerType , arryaMovieAndTvNotNull, arrayProviders)
+    })
+  });
 });
 
 footerEvent.addEventListener('click', (event) => {
@@ -98,6 +111,8 @@ footerEvent.addEventListener('click', (event) => {
   clearFooter();
   modalFooter();
 })
+
+
 
 function clearFooter() {
   let footerTemplate = document.querySelector('#footer-modal');

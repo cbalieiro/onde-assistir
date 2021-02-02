@@ -1,5 +1,5 @@
 import data from '../utils/config.js'
-import { filterMethod } from "../js/data.js"
+import { filterMethod, filterGenrer } from "../js/data.js"
 
 const dbObject = data.dataBase;
 const {
@@ -31,7 +31,7 @@ export const templateProvider = (array) => {
     if(providers === undefined || providers.BR === undefined || providers.BR === null || providers.BR.flatrate === undefined) { 
        if (document.getElementById(`${index.id}`)) { 
          document.getElementById(`${index.id}`).innerHTML = 
-         ` <p> Não há serviço disponível no memento de Streaming Gratuito no Brasil para esse título</p>`; } } 
+         ` <p> Não há disponibilidade em serviços de streaming</p>`; } } 
          else {
            if (document.getElementById(`${index.id}`)) { 
              document.getElementById(`${index.id}`).innerHTML = 
@@ -51,8 +51,11 @@ export const templateProvider = (array) => {
 } 
 
 
-export const filterBy = ((dataType, arraySearch, arrayProvider) => {
-  const filter = filterMethod(arraySearch,"==", dataType.id)
-  templateAllCards(filter);
+export const filterBy = ((dataType, genrer, arraySearch, arrayProvider) => {
+  const filter = filterMethod(arraySearch,"==", dataType.id);
+  console.log(filter);
+  const filterGenrer1 = filterGenrer(filter,"==", genrer);
+  console.log(filterGenrer1);
+  templateAllCards(filterGenrer1);
   templateProvider(arrayProvider);
 });

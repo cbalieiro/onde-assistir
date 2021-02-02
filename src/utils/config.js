@@ -8,4 +8,4 @@ export default {
       searchMulti: "search/multi?",
       watchProviders: "watch/providers?",
     }
-  };
+};
