@@ -28,6 +28,7 @@ let arrayProviders = [];
 const inputUser = document.querySelector("#search-input");
 const movie = document.getElementById("movie");
 const tv = document.getElementById("tv");
+const footerEvent = document.getElementById('footer');
 
 function clearDOM() {
   let cards = document.querySelector('#page-main')
@@ -92,10 +93,16 @@ tv.addEventListener('click', (event) => {
   movie.classList.remove('nav-item-selected');
 });
 
-const footerEvent = document.getElementById('footer');
-
 footerEvent.addEventListener('click', (event) => {
   event.preventDefault();
+  clearFooter();
   modalFooter();
 })
+
+function clearFooter() {
+  let footerTemplate = document.querySelector('#footer-modal');
+  while (footerTemplate.firstChild) {
+    footerTemplate.removeChild(footerTemplate.firstChild);
+  }
+};
 
