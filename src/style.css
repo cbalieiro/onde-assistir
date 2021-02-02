@@ -1,17 +1,24 @@
+/* IMPORT FONTES */
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
-
+/* CSS RESET */
 * { 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ESTILIZAÇÃO GLOBAL */
 html {
   height: 100%;
   width: 100%;
   font-family: 'Work Sans', sans-serif;
   font-size: 16px;
+  font-weight: 500;
+}
+
+body {
+  background-color: #f4f4f4;
 }
 
 /* PÁGINA HOME */
@@ -19,7 +26,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2rem 0 ;
+  margin: 1rem 0;
 }
 
 .logo {
@@ -30,22 +37,50 @@ html {
 
 .search-input {
   width: 65vw;
+  background: url(./img/search-icon.png) no-repeat 0.5rem 0.3rem #fff;
   border-radius: 3rem;
   border: solid 0.15rem #F2B705;
+  padding: 0.3rem 0.5rem;
+  padding-left: 2rem;
   font-family: 'Work Sans', sans-serif;
-  padding: 0.3rem;
+  font-size: 1rem;
+  outline: none;
 }
 
-.search-icon {
-  color: #F2B705;
-}
-
-/* CENTRO */
 .navbar {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-item {
+  padding: 1rem 0;
+  text-transform: uppercase;
   text-align: center;
+  letter-spacing: 0.1rem;
+  color: #393859;
+  
+}
+
+.nav-item-movies {
+  background-color: #999;
+}
+
+.nav-item-series {
+  background-color: #777;
 }
 
 /* RODAPÉ */
 .footer-about {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
 
+.footer-text {
+  background-color: #393859;
+  padding: 0.3rem;
+  font-size: 0.7rem;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
 }
