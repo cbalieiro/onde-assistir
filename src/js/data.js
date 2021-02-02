@@ -12,9 +12,11 @@ export const filterMethod = (array, operator, arg) => { //console.log(array);
 export const filterGenrer= (array, operator, arg) => { 
     switch (operator) {
       case '==':
-          return array.filter(type => type.genrers_id == arg)
+          return array.filter(type => {
+            console.log(type);  
+            return type.genre_ids.includes(arg)});
       case '!==':
-          return array.filter(type => type.genrers_id !== arg)
+          return array.filter(type => !type.genrers_id.includes(arg))
       default:
           console.log('operador não identificado!');
       }
