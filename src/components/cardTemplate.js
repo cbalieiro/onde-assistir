@@ -24,28 +24,35 @@ export const templateAllCards = (array) => {
   }
 }
 
-export const templateProvider = (array) => {
-  for (let index of array) {
-    //console.log(index.providers.flatrate)
-    if(index.providers.flatrate == undefined) {
-      if (document.getElementById(`${index.id}`)) {
-        document.getElementById(`${index.id}`).innerHTML = `
-        <p> Não há serviço disponível no memento de Streaming Gratuito no Brasil para esse título</p>`;
-      }
-    } if (index.providers.flatrate != undefined) {
-        if (document.getElementById(`${index.id}`)) {
-          document.getElementById(`${index.id}`).innerHTML = `
-          <p> Stream </p>`;
-        }
-      }
-  }
-}
+export const templateProvider = (array) => { 
+  for (let index of array) { 
+    let providers = index.results; 
+    if(providers === undefined || providers.BR === undefined || providers.BR === null || providers.BR.flatrate === undefined) { 
+       if (document.getElementById(`${index.id}`)) { 
+         document.getElementById(`${index.id}`).innerHTML = 
+         ` <p> Não há serviço disponível no memento de Streaming Gratuito no Brasil para esse título</p>`; } } 
+         else {
+           if (document.getElementById(`${index.id}`)) { 
+             document.getElementById(`${index.id}`).innerHTML = 
+             ` <p> Stream </p>`; 
+             const arrayflatrate = index.results.BR.flatrate; 
+             arrayflatrate.forEach(element => {
+               console.log(element);
+               let cardsProviders = document.getElementById(`${index.id}`);
+               let cardProvider =  document.createElement('div');
+               cardsProviders.appendChild(cardProvider);
+                cardProvider.innerHTML = 
+               `<img class="imgProvider" src="${baseImageURL}${imageSize}${element.logo_path}" width="40px"> `; 
+               element;
+             }); 
+            }
+    }    
+  } 
+} 
+
 
 export const filterBy = ((dataType, arraySearch, arrayProvider) => {
-  //console.log(arraySearch)
-  console.log(dataType.id)
   const filter = arraySearch.filter(type => type.media_type == dataType.id);
-  console.log(filter)
   templateAllCards(filter);
   templateProvider(arrayProvider);
 });
