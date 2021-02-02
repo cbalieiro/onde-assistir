@@ -1,16 +1,17 @@
 export const templateButtons = (() => {
-    console.log('teste');
-    let cards = `    
-      <input type='button' class="category" value="Ação"></input>
-      <input type='button' class="category" value="Aventura"></input>
-      <input type='button' class="category" value="Animação"></input>
-      <input type='button' class="category" value="Romance"></input>
-      <input type='button' class="category" value="Comédia"></input>
-      <input type='button' class="category" value="Drama"></input>
-      <input type='button' class="category" value="Documentário"></input>
-      <input type='button' class="category" value="Infantil"></input>
-      <input type='button' class="category" value="Ficção cientifica"></input>
-      <input type='button' class="category" value="Terror"></input>
-      `
-    return document.querySelector("#button-genres").innerHTML = cards;
+  let buttons = document.querySelector("#page-main");
+  let button = document.createElement("section");
+  buttons.appendChild(button)
+  button.innerHTML = `    
+    <input type='button' class="category" value="Ação">
+    <input type='button' class="category" value="Aventura">
+    <input type='button' class="category" value="Animação">
+    <input type='button' class="category" value="Romance">
+    <input type='button' class="category" value="Comédia">
+    <input type='button' class="category" value="Drama">
+    <input type='button' class="category" value="Documentário">
+    <input type='button' class="category" value="Infantil">
+    <input type='button' class="category" value="Ficção cientifica">
+    <input type='button' class="category" value="Terror">
+    `
 });
