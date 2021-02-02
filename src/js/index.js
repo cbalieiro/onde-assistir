@@ -8,6 +8,7 @@ import {
   templateAllCards,
   templateProvider
 } from '../components/cardTemplate.js';
+import { filterMethod } from "./data.js"
 
 const dbObject = data.dataBase;
 const {
@@ -24,9 +25,15 @@ let arryaMovieAndTvNotNull = [];
 let arrayProviders = [];
 
 const inputUser = document.querySelector("#search-input");
-
 const movie = document.getElementById("movie");
 const tv = document.getElementById("tv");
+
+function clearDOM() {
+  let cards = document.querySelector('#page-main')
+  while (cards.firstChild) {
+    cards.removeChild(cards.firstChild);
+  }
+};
 
 const getWatchProvider = (array) => {
   let arrayEmpty = []
@@ -55,12 +62,8 @@ inputUser.addEventListener("keyup", () => {
   searchAPI(urlSearch)
     .then((data) => {
       let arrayFilter = data.results
-      let arrayMovieAndTv = arrayFilter.filter((array) =>{
-        return array.media_type !== "person";
-      })
-      arryaMovieAndTvNotNull = arrayMovieAndTv.filter((array) => {
-        return array.poster_path !== null;
-      })
+      let arrayMovieAndTv = filterMethod(arrayFilter,"!==","person");
+      arryaMovieAndTvNotNull = filterMethod(arrayMovieAndTv,"!==",null);
       templateAllCards(arryaMovieAndTvNotNull)
       return arryaMovieAndTvNotNull;
     })
@@ -88,9 +91,3 @@ tv.addEventListener('click', (event) => {
   movie.classList.remove('nav-item-selected');
 });
 
-function clearDOM() {
-  let cards = document.querySelector('#page-main')
-  while (cards.firstChild) {
-    cards.removeChild(cards.firstChild);
-  }
-};
