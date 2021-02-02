@@ -20,19 +20,22 @@ export const templateAllCards = (array) => {
     card.innerHTML = `
     <img class="imagePoster" src="${baseImageURL}${imageSize}${index.poster_path}" width="150px">
     <div id="${index.id}"></div>
+    <div>${index.id}</div>
+    <div>${index.media_type}</div>
     `;
   }
 }
 
 export const templateProvider = (array) => {
   for (let index of array) {
-    console.log(index.providers.flatrate)
-    if(index.providers.flatrate == undefined) {
+    let providers = index.providers;
+    
+    if(providers == undefined || providers.BR.flatrate == undefined || providers.BR == undefined) {
       if (document.getElementById(`${index.id}`)) {
         document.getElementById(`${index.id}`).innerHTML = `
         <p> Não há serviço disponível no memento de Streaming Gratuito no Brasil para esse título</p>`;
       }
-    } if (index.providers.flatrate != undefined) {
+    } else {
         if (document.getElementById(`${index.id}`)) {
           document.getElementById(`${index.id}`).innerHTML = `
           <p> Stream </p>`;

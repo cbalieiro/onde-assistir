@@ -27,6 +27,20 @@ const inputUser = document.querySelector("#search-input");
 const movie = document.getElementById("movie");
 const tv = document.getElementById("tv")
 
+const getWatchProvider = (array) => {
+  for (let index of array) {
+    let urlProvider = `${baseURL}${index.media_type}/${index.id}/${watchProviders}${apiKey}`
+    searchAPI(urlProvider)
+      .then((searchReturn) => {
+        arrayProviders.push(searchReturn);
+        return templateProvider(arrayProviders);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
+};
+
 inputUser.addEventListener("keyup", () => {
   clearDOM()
   let inputValue = inputUser.value.toLowerCase();
@@ -39,30 +53,9 @@ inputUser.addEventListener("keyup", () => {
     })
     .then((data) => {
       return getWatchProvider(data)
-  
+
     })
 })
-
-
-const getWatchProvider = (array) => {
-  for (let index of array) {
-    let urlProvider = `${baseURL}${index.media_type}/${index.id}/${watchProviders}${apiKey}`
-    searchAPI(urlProvider)
-      .then((searchReturn) => {
-        let id = searchReturn.id;
-        let providers = searchReturn.results.BR;
-        arrayProviders.push({
-          id: id,
-          providers: providers
-        });
-        return templateProvider(arrayProviders);
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-  }
-};
-
 
 movie.addEventListener('click', (event) => {
   event.preventDefault();
