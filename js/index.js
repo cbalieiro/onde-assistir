@@ -45,7 +45,7 @@ const getWatchProvider = (array) => {
         console.log(error);
       })
   }
-  return arrayProviders=arrayEmpty
+  return arrayProviders = arrayEmpty;
 };
 
 inputUser.addEventListener("keyup", () => {
@@ -71,7 +71,6 @@ inputUser.addEventListener("keyup", () => {
 
 movie.addEventListener('click', (event) => {
   event.preventDefault();
-  console.log("clicou movie")
   clearDOM()
   templateButtons();
   filterBy(movie, arrayMovieAndTv, arrayProviders)
@@ -79,7 +78,6 @@ movie.addEventListener('click', (event) => {
 
 tv.addEventListener('click', (event) => {
   event.preventDefault();
-  console.log("clicou serie")
   clearDOM()
   templateButtons();
   filterBy(tv, arrayMovieAndTv, arrayProviders)
