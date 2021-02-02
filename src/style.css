@@ -144,3 +144,29 @@ button, input {
   text-transform: uppercase;
   text-align: center;
 }
+/* ABOUT US  */
+.about-us {
+  height: 360px;
+  width: 70vw;
+  border: solid 0.15rem #F2B705;
+  margin: 15%;
+  border-radius: 10%;
+}
+
+.about-text {
+  font-size: 13px;
+  text-align: center;
+  margin: 5vw;
+}
+
+.photo-akemi,
+.photo-bianca,
+.photo-camila,
+.photo-carol,
+.photo-hadassa,
+.photo-kauana,
+.photo-lucila { 
+  width: 3em;
+  border-radius: 50%;
+  margin-left: 10%;
+}

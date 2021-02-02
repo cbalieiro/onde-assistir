@@ -8,6 +8,7 @@ import {
   templateAllCards,
   templateProvider
 } from '../components/cardTemplate.js';
+import { modalFooter } from '../components/modalfooter.js';
 import { filterMethod } from "./data.js"
 
 const dbObject = data.dataBase;
@@ -90,4 +91,11 @@ tv.addEventListener('click', (event) => {
   tv.classList.add('nav-item-selected');
   movie.classList.remove('nav-item-selected');
 });
+
+const footerEvent = document.getElementById('footer');
+
+footerEvent.addEventListener('click', (event) => {
+  event.preventDefault();
+  modalFooter();
+})
 
