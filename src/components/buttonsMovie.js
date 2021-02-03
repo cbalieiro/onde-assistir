@@ -1,7 +1,6 @@
 
 
 export const templateButtonsMovie = (() => {
-  console.log("movie")
   let buttons = document.querySelector("#page-main");
   let button = document.createElement("section");
   button.classList.add('section-genres');

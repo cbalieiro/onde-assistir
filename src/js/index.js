@@ -24,7 +24,7 @@ const {
   watchProviders,
 } = dbObject;
 
-let arryaMovieAndTvNotNull = [];
+let arrayMovieAndTvNotNull = [];
 let arrayProviders = [];
 let arrayGenre = []
 let arrayTrends = [];
@@ -43,7 +43,7 @@ function clearDOM() {
 
 const getWatchProvider = (array) => {
   let arrayEmpty = []
-  for (let index of array) {
+    for (let index of array) {
     let urlProvider = `${baseURL}${index.media_type}/${index.id}/${watchProviders}${apiKey}`
     searchAPI(urlProvider)
       .then((searchReturn) => {
@@ -69,9 +69,9 @@ inputUser.addEventListener("keyup", () => {
     .then((data) => {
       let arrayFilter = data.results
       let arrayMovieAndTv = filterMethod(arrayFilter,"!==","person");
-      arryaMovieAndTvNotNull = filterMethod(arrayMovieAndTv,"!==",null);
-      templateAllCards(arryaMovieAndTvNotNull)
-      return arryaMovieAndTvNotNull;
+      arrayMovieAndTvNotNull = filterMethod(arrayMovieAndTv,"!==",null);
+      templateAllCards(arrayMovieAndTvNotNull)
+      return arrayMovieAndTvNotNull;
     })
     .then((data) => {
       return getWatchProvider(data)
@@ -80,14 +80,17 @@ inputUser.addEventListener("keyup", () => {
     .then((data) =>{
       return getGenre(data)
     })
+    return arrayMovieAndTvNotNull = [];
 })
 
 movie.addEventListener('click', (event) => {
   event.preventDefault();
   getTrends();
   clearDOM()
-  templateButtonsMovie();
-  filterBy(movie, arryaMovieAndTvNotNull, arrayProviders)
+  if (arrayMovieAndTvNotNull.length === 0) {
+    templateButtonsMovie();
+  }
+  filterBy(movie, arrayMovieAndTvNotNull, arrayProviders)
   movie.classList.add('nav-item-selected');
   tv.classList.remove('nav-item-selected');
   const buttonSelector = document.querySelectorAll('.genre-btn');
@@ -105,8 +108,10 @@ tv.addEventListener('click', (event) => {
   event.preventDefault();
   getTrends();
   clearDOM();
-  templateButtonsSeries();
-  filterBy(tv, arryaMovieAndTvNotNull, arrayProviders)
+  if (arrayMovieAndTvNotNull.length === 0) {
+    templateButtonsSeries();
+  }
+  filterBy(tv, arrayMovieAndTvNotNull, arrayProviders)
   tv.classList.add('nav-item-selected');
   movie.classList.remove('nav-item-selected');
   const buttonSelector = document.querySelectorAll('.genre-btn');
