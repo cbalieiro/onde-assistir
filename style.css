@@ -159,7 +159,7 @@ button, input {
 
 /* ABOUT US  */
 .about-us {
-  height: 420px;
+  height: 450px;
   width: 70vw;
   border: solid 0.15rem #F2B705;
   margin: 15% auto;
@@ -235,7 +235,7 @@ body .itemActive {
 
 @media (min-width: 500px) {
   .about-us {
-    max-width: 390px;
+    max-width: 450px;
     align-items: center;
     margin: auto;
   }

@@ -1,3 +1,5 @@
+
+
 export const templateButtonsMovie = (() => {
   console.log("movie")
   let buttons = document.querySelector("#page-main");
