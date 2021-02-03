@@ -32,12 +32,17 @@ a {
   text-decoration: none;
 }
 
+.hidden {
+  display: none;
+}
+
 .page-main {
   max-width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   padding: 0.5rem;
+  padding-bottom: 3rem;
   overflow: auto;
 }
 
@@ -149,9 +154,6 @@ a {
 }
 
 .card-poster {
-  /* width: 100%;
-  max-width: 100%;
-  height: auto; */
   width: 8.19rem;
   height: 12.3rem;
   object-fit: cover;
@@ -191,38 +193,30 @@ a {
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
-.modal-information {
-  height: 420px;
-  width: 70vw;
-  border: solid 0.15rem #F2B705;
-  margin: 15% auto;
-  border-radius: 10%;
-  box-shadow: 0 0 2em #3C3B37;
-  background-color: #f4f4f4;
+.modal-poster {
+  width: 6.2rem;
+  height: auto;
+  border-radius: 0.5rem;
+  border: solid 1px #c4c4c4;
 }
 
-/* RODAPÉ */
-.footer-about {
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  cursor: pointer;
+.modal-title {
+  margin: 0.5rem 0;
+  font-size: 1.3rem;
+  font-weight: bold;
 }
 
-.footer-text {
-  background-color: #393859;
-  padding: 0.3rem;
-  font-size: 0.7rem;
-  color: #fff;
-  text-transform: uppercase;
-  text-align: center;
+.modal-overview {
+  margin: 0.5rem;
+  font-size: 0.9rem;
+  text-align: left;
 }
 
 /* ABOUT US  */
-.about-us {
+.modal {
   width: 90vw;
   border: solid 0.2rem #F2B705;
   margin: auto;
@@ -271,6 +265,7 @@ a {
 
 body .itemActive {
   display: flex;
+  overflow: scroll;
 }
 
 .modal-about{
@@ -284,7 +279,7 @@ body .itemActive {
 }
 
 .btn-close {
-  margin: 1rem 0;
+  margin-top: 1rem;
   padding: 0.4rem 1.3rem;
   background-color: #F2B705;
   text-align: center;
@@ -302,4 +297,21 @@ body .itemActive {
     align-items: center;
     margin: auto;
   }
+}
+
+/* RODAPÉ */
+.footer-about {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.footer-text {
+  background-color: #393859;
+  padding: 0.3rem;
+  font-size: 0.7rem;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
 }
