@@ -45,8 +45,6 @@ export const templateProvider = (array) => {
         document.getElementById(`${index.id}`).innerHTML = ``;
         const arrayflatrate = index.results.BR.flatrate;
         arrayflatrate.forEach(element => {
-          console.log(element.logo_path);
-          console.log(element.provider_name);
           let linksPath = links(element.logo_path);
           let cardsProviders = document.getElementById(`${index.id}`);
           cardsProviders.classList.add('provider-wrap');
@@ -74,7 +72,6 @@ export const filterBy = ((dataType, arraySearch, arrayProvider) => {
 export const filterByGenrer = ((dataType, genrerType, arraySearch, arrayProvider) => {
   const filter = filterMethod(arraySearch, "==", dataType.id);
   const arrayFilterGenrer = filterGenrer(filter, "==", genrerType);
-  console.log(filter)
   templateAllCards(arrayFilterGenrer);
   templateProvider(arrayProvider);
 });
