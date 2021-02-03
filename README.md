@@ -79,7 +79,6 @@ Ao perguntar a respeito da funcionalidade da aplicação, a maioria dos responde
 
 :tada: Então tomamos a decisão de atacar a problematica de apresentar ao leitor quais streamings dispoem de cada título e montamos nosso Briefing e KanBan de background do nosso produto
 
-XXXXXXXXXXXXXXXXXXXXXXXXX PRINT KANBAN
 
 
 ### Prototipagem
