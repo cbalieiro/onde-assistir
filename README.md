@@ -94,9 +94,9 @@ Então mesclamos as características positivas de ambos e finalizamos o modelo f
 
 ![](/src/img/readme/baixa.fidelidade3.jpeg)
 
-A partir dele, criamos a primeira versão do protótipo de média fidelidade que pode ser acessado <a href=“www.bit.ly/prototipo-streaming“>aqui</a>
+A partir dele, criamos a primeira versão do protótipo de média fidelidade que pode ser acessado <a href=“http://bit.ly/prototipo-streaming“>aqui</a>
 
-O protótipo definitivo foi finalizado após os testes de usabilidade e implementado mudanças a partir do feedback dos usuários realizados com prototipo anterior, pode ser acessado <a href=“www.bit.ly/onde-assistir-teste2“>aqui</a>
+O protótipo definitivo foi finalizado após os testes de usabilidade e implementado mudanças a partir do feedback dos usuários realizados com prototipo anterior, pode ser acessado <a href=“http://bit.ly/onde-assistir-teste2“>aqui</a>
 
 ### Testes
 
