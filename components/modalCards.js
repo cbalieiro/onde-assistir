@@ -6,24 +6,27 @@ const {
   imageSize,
 } = dbObject;
 
+const footer = document.querySelector('#footer');
+
 export const modalCards = (id, poster_path, genre_ids, title, overview, release_date) => {
     let modalTemplate = document.querySelector('.modal-cards');
     let informationCard = document.createElement('section');
     modalTemplate.classList.add('itemActive');
-    informationCard.classList.add('modal-information')
+    informationCard.classList.add('modal');
+    footer.classList.add('hidden');
     modalTemplate.appendChild(informationCard);
     informationCard.innerHTML = `
-        <span class="btnClose">&times;</span>
-        <img id="${id}" class="modal-poster" src="${baseImageURL}${imageSize}${poster_path}" width="100px">
-        <div> ${title}</div>
-        <div id="genre"></div>
-        <div> ${overview}</div>
+        <img id="${id}" class="modal-poster" src="${baseImageURL}${imageSize}${poster_path}">
+        <p class="modal-title">${title}</p>
+        <p class="modal-overview">${overview}</p>
+        <button class="btn-close">Voltar</button>
         `
     
-    const btnClose = modalTemplate.querySelector('.btnClose');
+    const btnClose = modalTemplate.querySelector('.btn-close');
     btnClose.addEventListener('click', (event) => {
         event.preventDefault();
         modalTemplate.classList.remove('itemActive');
+        footer.classList.remove('hidden');
         informationCard.style.display = "none";
         informationCard.innerHTML = "";
     });
