@@ -19,10 +19,10 @@ export const modalCards = (id, poster_path, genre_ids, title, overview, release_
         <img id="${id}" class="modal-poster" src="${baseImageURL}${imageSize}${poster_path}">
         <p class="modal-title">${title}</p>
         <p class="modal-overview">${overview}</p>
-        <button class="btnClose btn-close">Voltar</button>
+        <button class="btn-close">Voltar</button>
         `
     
-    const btnClose = modalTemplate.querySelector('.btnClose');
+    const btnClose = modalTemplate.querySelector('.btn-close');
     btnClose.addEventListener('click', (event) => {
         event.preventDefault();
         modalTemplate.classList.remove('itemActive');

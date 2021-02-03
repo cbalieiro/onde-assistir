@@ -210,17 +210,18 @@ a {
 }
 
 .modal-overview {
-  margin: 0.5rem;
   font-size: 0.9rem;
   text-align: left;
+  line-height: 1.2rem;
 }
 
 /* ABOUT US  */
 .modal {
   width: 90vw;
+  height: fit-content;
   border: solid 0.2rem #F2B705;
-  margin: auto;
-  padding: 0.7rem 0.4rem;
+  margin: 3rem auto;
+  padding: 1.5rem 1rem;
   border-radius: 1rem;
   box-shadow: 0 0 2em #3C3B37;
   background-color: #f4f4f4;
