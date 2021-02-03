@@ -103,6 +103,23 @@ O protótipo definitivo foi finalizado após os testes de usabilidade e implemen
 
 Com o feedback dos testes de usabilidade percebemos os seguintes problemas, e propomos as respectivas soluções:
 
+1. Campo de busca confuso abaixo do menu Séries e Filmes;
+* Solução - Mudar para abaixo do header.
+
+2. Campo de busca em branco, confunde o que é para fazer;
+* Solução - Inserir uma lupa dentro do campo de busca, evidenciando que ali é para fazer as pesquisas.
+
+3. Emojis dos botões de classificação difíceis de enxergar;
+* Solução - Aumentar o tamanho dos emojis.
+
+4. Menu com botões muito grandes;
+* Solução - Reduzir o tamanho do menu.
+
+5. Ao clicar no botão do menu, a cor do botão clicado muda para cinza claro e onde não foi clicado fica cinza escuro, o que confundiu, pois segundo os testes, os usuários deduziram que onde está mais escuro seria o botão selecionado;
+* Solução - Inveter a cor dos botões.
+
+6. Uuário tentou clicar no ícone de indicação da plataforma, onde não havia nenhum direcionamento e não acontecia nenhum evento ao clicar;
+* Solução - Interligar o link da plataforma ao ícone, para ao clicar, o usuário ser drecionado para a respectiva plataforma.
 
 
 XXXXXXXXXXXXXXX
@@ -129,7 +146,9 @@ Nossas proto-personas foram modeladas baseando-se na pesquisa realizada e valida
 
 ### Histórias de Usuário
 
-XXX
+1. Eu como usuário quero assistir um determinado filme/série e desejo saber rapidamente em qual plataforma de stream está disponível.
+
+2. Eu como usuário desejo, ao querer assistir um determinado filme ou série, saber atravez de poucos cliques, as informações de gênero, sinopse e os respectivos streamings que está disponível.
 
 
 ## :gear: Desenvolvimento
