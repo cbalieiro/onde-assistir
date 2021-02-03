@@ -24,7 +24,12 @@ body {
 button, input {
   font-family: 'Work Sans', sans-serif;
   font-weight: 500;
+  font-size: 1.2rem;
   outline: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 .page-main {
@@ -73,7 +78,6 @@ button, input {
   letter-spacing: 0.3rem;
   color: #fff;
   background-color: #393859;
-  transition: ease-in-out 0.3s;
 }
 
 .nav-item-movies {
@@ -87,7 +91,6 @@ button, input {
 .nav-item-selected {
   background-size: 100% 110%;
   background-image: linear-gradient(to bottom, #393859, #1E1D30);
-  transition: ease-in-out 0.3s;
 }
 
 /* GÊNEROS */
@@ -136,107 +139,6 @@ button, input {
   height: auto;
 }
 
-/* RODAPÉ */
-.footer-about {
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  cursor: pointer;
-}
-
-.footer-text {
-  background-color: #393859;
-  padding: 0.3rem;
-  font-size: 0.7rem;
-  color: #fff;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-/* ABOUT US  */
-.about-us {
-  height: 450px;
-  width: 70vw;
-  border: solid 0.15rem #F2B705;
-  margin: 15% auto;
-  border-radius: 10%;
-  box-shadow: 0 0 2em #3C3B37;
-  background-color: #f4f4f4;
-}
-
-.about-text {
-  font-size: 13px;
-  text-align: center;
-  margin: 5vw;
-}
-
-.photos-devs {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.photo-akemi,
-.photo-bianca,
-.photo-camila,
-.photo-carol,
-.photo-hadassa,
-.photo-kauana,
-.photo-lucila { 
-  width: 4.8em;
-  border-radius: 50%;
-  padding: 10%;
-}
-
-body .itemActive {
-  display: flex;
-}
-
-.modal-about{
-  display: none;
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.btnclose {
-  font-size: 13px;
-  cursor: pointer;
-  color: #F2B705;
-  text-align: center;
-  margin-top: 3vw;
-}
-
-@media (max-width: 350px) {
-  .photo-akemi,
-  .photo-bianca,
-  .photo-camila,
-  .photo-carol,
-  .photo-hadassa,
-  .photo-kauana,
-  .photo-lucila { 
-    width: 4.3em;
-    border-radius: 50%;
-    padding: 10%;
-  }
-  .about-us {
-    max-height: 500px;
-  }
-}
-
-@media (min-width: 500px) {
-  .about-us {
-    max-width: 450px;
-    align-items: center;
-    margin: auto;
-  }
-}
-
 /* CARD DOS TÍTULOS */
 .card-title {
   max-width: 8.2rem;
@@ -281,7 +183,7 @@ body .itemActive {
   align-self: center;
 }
 
-/*MODAL DOS TITULOS */
+/*MODAL DOS TÍTULOS */
 .modal-cards {
   display: none;
   position: fixed;
@@ -300,4 +202,104 @@ body .itemActive {
   border-radius: 10%;
   box-shadow: 0 0 2em #3C3B37;
   background-color: #f4f4f4;
+}
+
+/* RODAPÉ */
+.footer-about {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.footer-text {
+  background-color: #393859;
+  padding: 0.3rem;
+  font-size: 0.7rem;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ABOUT US  */
+.about-us {
+  width: 90vw;
+  border: solid 0.2rem #F2B705;
+  margin: auto;
+  padding: 0.7rem 0.4rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 2em #3C3B37;
+  background-color: #f4f4f4;
+  text-align: center;
+  color: #393859;
+}
+
+.about-text {
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.text-important {
+  font-weight: bold;
+}
+
+.devs-profile-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.link-dev {
+  margin: 0.5rem;
+}
+
+.photo-dev { 
+  width: 3.8rem;
+  border-radius: 50%;
+  border: 3px solid #393859;
+  margin-bottom: 0.1rem
+}
+
+.name-dev {
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: #393859;
+  text-transform: uppercase;
+}
+
+body .itemActive {
+  display: flex;
+}
+
+.modal-about{
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.btn-close {
+  margin: 1rem 0;
+  padding: 0.4rem 1.3rem;
+  background-color: #F2B705;
+  text-align: center;
+  color: #393859;
+  cursor: pointer;
+  border: none;
+  border-radius: 3rem;
+  font-size: 1.2rem;
+  box-shadow: 3px 3px 8px -3px rgba(0,0,0,0.42);
+}
+
+@media (min-width: 500px) {
+  .about-us {
+    max-width: 450px;
+    align-items: center;
+    margin: auto;
+  }
 }
