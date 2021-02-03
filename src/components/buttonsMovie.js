@@ -1,3 +1,5 @@
+
+
 export const templateButtonsMovie = (() => {
   console.log("movie")
   let buttons = document.querySelector("#page-main");
@@ -6,7 +8,7 @@ export const templateButtonsMovie = (() => {
   buttons.appendChild(button)
   button.innerHTML = `    
     <button id="genre-action" class="genre-btn genre-btn-movie genre-btn-light genre-action" value="28">
-      <img class="genre-emoji" src="../img/emoji-action.png">
+      <img class="genre-emoji" src="https://cbalieiro.github.io/onde-assistir/img/emoji-action.png">
       &nbsp;Ação
     </button>
     <button id="genre-adventure" class="genre-btn genre-btn-light genre-adventure" value="12">
