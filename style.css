@@ -1,6 +1,13 @@
 /* IMPORT FONTES */
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
+/* REFERÊNCIAS PARA MEDIA QUERIES */
+/*
+Mobile maior -- max-width: 600px
+Tablet retrato -- min-width: 601px
+Tablet paisagem e Desktop -- min-width: 900px
+*/
+
 /* CSS RESET */
 * { 
   margin: 0;
@@ -161,43 +168,44 @@ a {
 
 /* CARD DOS TÍTULOS */
 .card-title {
-  max-width: 8.2rem;
+  max-width: 14rem;
   height: auto;
-  margin: 0.3rem;
+  margin: 1rem;
   display: flex;
   flex-direction: column;
 }
 
 .card-poster {
-  width: 8.19rem;
-  height: 12.3rem;
+  width: 14rem;
+  height: 21.12rem;
   object-fit: cover;
-  border-radius: 0.4rem 0.4rem 0 0;
+  border-radius: 0.5rem 0.5rem 0 0;
   border: solid 1px #c4c4c4;
   border-bottom: none;
 }
 
-.provider-wrap {
-  height: 2.5rem;
+.availability-wrap {
+  height: 3.2rem;
   display: flex;
   justify-content: space-evenly;
   padding: 0.3rem;
   background-color: #393859;
-  border-radius: 0 0 0.4rem 0.4rem;
+  border-radius: 0 0 0.5rem 0.5rem;
   border: solid 1px #c4c4c4;
   border-top: none;
 }
 
 .provider-img {
+  height: 2.5rem;
+  width: auto;
   border-radius: 0.3rem;
-  height: 1.9rem;
 }
 
 .unavailable-title {
-  font-size: 0.8rem;
-  color: #fff;
-  margin: auto 0;
   align-self: center;
+  margin: auto 0;
+  font-size: 0.8rem;
+  color: #F2B705;
 }
 
 /*MODAL DOS TÍTULOS */
@@ -208,7 +216,7 @@ a {
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .modal-poster {
@@ -235,7 +243,7 @@ a {
   width: 90vw;
   height: fit-content;
   border: solid 0.2rem #F2B705;
-  margin: 3rem auto;
+  margin: 2rem auto;
   padding: 1.5rem 1rem;
   border-radius: 1rem;
   box-shadow: 0 0 2em #3C3B37;
@@ -291,7 +299,7 @@ body .itemActive {
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .btn-close {
@@ -305,14 +313,6 @@ body .itemActive {
   border-radius: 3rem;
   font-size: 1.2rem;
   box-shadow: 3px 3px 8px -3px rgba(0,0,0,0.42);
-}
-
-@media (min-width: 500px) {
-  .about-us {
-    max-width: 450px;
-    align-items: center;
-    margin: auto;
-  }
 }
 
 /* RODAPÉ */
