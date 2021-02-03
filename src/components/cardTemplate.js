@@ -81,7 +81,7 @@ export const filterByGenrer = ((dataType, genrerType, arraySearch, arrayProvider
     message.classList.add('section-genres');
     errorMessage.appendChild(message)
     message.innerHTML = `    
-      <p class="no-titles-msg">Nesta semana não há lançamentos de títulos no gênero escolhido</p>
+      <p class="no-titles-msg">Nesta semana não há lançamentos de títulos no gênero escolhido.</p>
     ` 
   }
 
