@@ -72,6 +72,17 @@ export const filterBy = ((dataType, arraySearch, arrayProvider) => {
 export const filterByGenrer = ((dataType, genrerType, arraySearch, arrayProvider) => {
   const filter = filterMethod(arraySearch, "==", dataType.id);
   const arrayFilterGenrer = filterGenrer(filter, "==", genrerType);
-  templateAllCards(arrayFilterGenrer);
-  templateProvider(arrayProvider);
+  if(arrayFilterGenrer.length > 0) {
+    templateAllCards(arrayFilterGenrer);
+    templateProvider(arrayProvider);
+  } else {
+    let errorMessage = document.querySelector("#page-main");
+    let message = document.createElement("section");
+    message.classList.add('section-genres');
+    errorMessage.appendChild(message)
+    message.innerHTML = `    
+      <div>Não há lançamentos de séries no genero selecionado.</div>
+    ` 
+  }
+
 });
