@@ -2,7 +2,7 @@ export const modalFooter = (() => {
 	let footerTemplate = document.querySelector('#footer-modal');
 	let creatAboutUs = document.createElement('section');
 	footerTemplate.classList.add('itemActive');
-	creatAboutUs.classList.add('about-us');
+	creatAboutUs.classList.add('modal');
 	footerTemplate.appendChild(creatAboutUs);
 	creatAboutUs.innerHTML = `
     <p class="about-text">
