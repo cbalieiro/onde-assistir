@@ -1,4 +1,3 @@
-
 export const modalFooter = (() => {
     let footerTemplate = document.querySelector('#footer-modal');
     let creatAboutUs = document.createElement('section');

@@ -284,3 +284,24 @@ body .itemActive {
   margin: auto 0;
   align-self: center;
 }
+
+/*MODAL DOS TITULOS */
+.modal-cards {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-information {
+  height: 420px;
+  width: 70vw;
+  border: solid 0.15rem #F2B705;
+  margin: 15% auto;
+  border-radius: 10%;
+  box-shadow: 0 0 2em #3C3B37;
+  background-color: #f4f4f4;
+}
