@@ -134,10 +134,10 @@ O protótipo definitivo foi finalizado após os testes de usabilidade e implemen
 
 Nossas proto-personas foram modeladas baseando-se na pesquisa realizada e validadas pelas entrevistas individuais
 
-![](/src/img/readme/persona_1.png)
-![](/src/img/readme/persona_2.png)</br>
-![](/src/img/readme/persona_3.png)
-![](/src/img/readme/persona_4.png)
+![](/src/img/readme/Persona_1.png)
+![](/src/img/readme/Persona_2.png)</br>
+![](/src/img/readme/Persona_3.png)
+![](/src/img/readme/Persona_4.png)
 
 
 ### Histórias de Usuário
