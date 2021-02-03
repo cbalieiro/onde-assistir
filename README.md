@@ -1,5 +1,5 @@
 
-# :tv: Onde Assistir ?
+# :tv: Onde Assistir?
 
 Acesse a aplicação aqui: https://cbalieiro.github.io/onde-assistir/
 
