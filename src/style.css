@@ -115,10 +115,6 @@ a {
   box-shadow: 3px 3px 8px -3px rgba(0,0,0,0.42);
 }
 
-.genre-action-movie {
-  background-color: #F2B705;
-}
-
 .genre-btn-light {
   color: #393859;
 }
@@ -128,16 +124,27 @@ a {
   color: #fff;
 }
 
-.genre-action { background-color: #E1F4EF }
-.genre-adventure { background-color: #BBE7DB }
-.genre-animation { background-color: #95DAC6 }
-.genre-romance { background-color: #70CDB2 }
-.genre-comedy { background-color: #4BBF9E }
-.genre-drama { background-color: #389F81 }
-.genre-doc { background-color: #2A7963 }
-.genre-kids { background-color: #1D5344 }
-.genre-sci-fi { background-color: #102D25 }
-.genre-horror { background-color: #0C221C }
+.genre-action-movie { background-color: hsl(163, 48%, 76%) }
+.genre-adventure-movie { background-color: hsl(163, 48%, 70%) }
+.genre-animation-movie { background-color: hsl(163, 48%, 64%) }
+.genre-romance-movie { background-color: hsl(163, 48%, 58%) }
+.genre-comedy-movie { background-color: hsl(163, 48%, 52%) }
+.genre-drama-movie { background-color: hsl(163, 48%, 46%) }
+.genre-doc-movie { background-color: hsl(163, 48%, 40%) }
+.genre-kids-movie { background-color: hsl(163, 48%, 32%) }
+.genre-sci-fi-movie { background-color: hsl(163, 48%, 26%) }
+.genre-horror-movie { background-color: hsl(163, 48%, 20%) }
+
+.genre-action-series { background-color: hsl(255, 48%, 84%) }
+.genre-adventure-series { background-color: hsl(255, 48%, 74%) }
+.genre-animation-series { background-color: hsl(255, 48%, 70%) }
+.genre-romance-series { background-color: hsl(255, 48%, 66%) }
+.genre-comedy-series { background-color: hsl(255, 48%, 60%) }
+.genre-drama-series { background-color: hsl(255, 48%, 54%) }
+.genre-doc-series { background-color: hsl(255, 48%, 48%) }
+.genre-kids-series { background-color: hsl(255, 48%, 40%) }
+.genre-sci-fi-series { background-color: hsl(255, 48%, 34%) }
+.genre-horror-series { background-color: hsl(255, 48%, 28%) }
 
 .genre-emoji {
   width: 1.4rem;
