@@ -151,6 +151,14 @@ a {
   height: auto;
 }
 
+.no-titles-msg {
+  width: 12rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  color: #393859;
+}
+
 /* CARD DOS TÍTULOS */
 .card-title {
   max-width: 8.2rem;
