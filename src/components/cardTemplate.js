@@ -1,5 +1,5 @@
 import data from '../utils/config.js'
-import { filterMethod , links } from "../js/data.js"
+import { filterMethod, links, filterGenrer } from "../js/data.js"
 
 const dbObject = data.dataBase;
 const {
@@ -62,5 +62,13 @@ export const templateProvider = (array) => {
 export const filterBy = ((dataType, arraySearch, arrayProvider) => {
   const filter = filterMethod(arraySearch, "==", dataType.id)
   templateAllCards(filter);
+  templateProvider(arrayProvider);
+});
+
+export const filterByGenrer = ((dataType, genrerType, arraySearch, arrayProvider) => {
+  const filter = filterMethod(arraySearch, "==", dataType.id);
+  const arrayFilterGenrer = filterGenrer(filter, "==", genrerType);
+  console.log(filter)
+  templateAllCards(arrayFilterGenrer);
   templateProvider(arrayProvider);
 });

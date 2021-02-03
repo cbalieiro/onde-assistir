@@ -1,5 +1,5 @@
-import data from '../utils/config.js';
-import { filterBy } from '../components/cardTemplate.js';
+import data, {dataTrends} from '../utils/config.js';
+import { filterBy, filterByGenrer } from '../components/cardTemplate.js';
 import { templateButtonsMovie } from '../components/buttonsMovie.js';
 import { templateButtonsSeries } from '../components/buttonsSeries.js';
 import {
@@ -25,6 +25,7 @@ const {
 
 let arryaMovieAndTvNotNull = [];
 let arrayProviders = [];
+let arrayTrends = [];
 
 const inputUser = document.querySelector("#search-input");
 const movie = document.getElementById("movie");
@@ -78,20 +79,40 @@ inputUser.addEventListener("keyup", () => {
 
 movie.addEventListener('click', (event) => {
   event.preventDefault();
+  getTrends();
   clearDOM()
   templateButtonsMovie();
   filterBy(movie, arryaMovieAndTvNotNull, arrayProviders)
   movie.classList.add('nav-item-selected');
   tv.classList.remove('nav-item-selected');
+  const buttonSelector = document.querySelectorAll('.genre-btn');
+  buttonSelector.forEach(button => {
+    button.addEventListener('click', event => {
+      event.preventDefault();
+      clearDOM();
+      const genrerType = button.attributes.value.nodeValue;
+      filterByGenrer(movie, genrerType, arrayTrends, arrayProviders);
+    })
+  });
 });
 
 tv.addEventListener('click', (event) => {
   event.preventDefault();
-  clearDOM()
+  getTrends();
+  clearDOM();
   templateButtonsSeries();
   filterBy(tv, arryaMovieAndTvNotNull, arrayProviders)
   tv.classList.add('nav-item-selected');
   movie.classList.remove('nav-item-selected');
+  const buttonSelector = document.querySelectorAll('.genre-btn');
+  buttonSelector.forEach(button => {
+    button.addEventListener('click', event => {event.preventDefault();
+      event.preventDefault();
+      clearDOM();
+      const genrerType = button.attributes.value.nodeValue;
+      filterByGenrer(tv, genrerType , arrayTrends, arrayProviders);
+    })
+  });
 });
 
 footerEvent.addEventListener('click', (event) => {
@@ -100,9 +121,20 @@ footerEvent.addEventListener('click', (event) => {
   modalFooter();
 })
 
+
 function clearFooter() {
   let footerTemplate = document.querySelector('#footer-modal');
   while (footerTemplate.firstChild) {
     footerTemplate.removeChild(footerTemplate.firstChild);
   }
 };
+
+function getTrends(){
+  searchAPI(dataTrends)
+  .then((data) => {
+    let arrayFilter = data.results
+    let arrayMovieAndTv = filterMethod(arrayFilter,"!==","person");
+    arrayTrends = filterMethod(arrayMovieAndTv,"!==",null);
+    return arrayTrends;
+  })
+}
