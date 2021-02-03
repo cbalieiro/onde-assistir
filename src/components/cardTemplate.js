@@ -1,4 +1,5 @@
 import data from '../utils/config.js'
+import { modalCards } from "../components/modalCards.js"
 import { filterMethod, links, filterGenrer } from "../js/data.js"
 
 const dbObject = data.dataBase;
@@ -19,9 +20,14 @@ export const templateAllCards = (array) => {
     card.classList.add('card-title')
     cards.appendChild(card)
     card.innerHTML = `
-      <img class="card-poster" src="${baseImageURL}${imageSize}${index.poster_path}">
+      <img id="teste" class="card-poster" src="${baseImageURL}${imageSize}${index.poster_path}">
       <div id="${index.id}" class="provider-wrap"></div>
     `;
+    const clickModal = card.querySelector("#teste")
+    clickModal.addEventListener('click', (event) =>{
+      event.preventDefault()
+      modalCards(index.id, index.poster_path, index.genre_ids, index.title, index.overview, index.release_date)
+    })
   }
 }
 

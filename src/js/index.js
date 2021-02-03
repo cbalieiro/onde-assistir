@@ -11,6 +11,7 @@ import {
 } from '../components/cardTemplate.js';
 import { modalFooter } from '../components/modalfooter.js';
 import { filterMethod } from "./data.js"
+import { templateGenre } from '../components/modalCards.js';
 
 const dbObject = data.dataBase;
 const {
@@ -25,6 +26,7 @@ const {
 
 let arryaMovieAndTvNotNull = [];
 let arrayProviders = [];
+let arrayGenre = []
 let arrayTrends = [];
 
 const inputUser = document.querySelector("#search-input");
@@ -74,6 +76,9 @@ inputUser.addEventListener("keyup", () => {
     .then((data) => {
       return getWatchProvider(data)
   
+    })
+    .then((data) =>{
+      return getGenre(data)
     })
 })
 
@@ -127,6 +132,24 @@ function clearFooter() {
   while (footerTemplate.firstChild) {
     footerTemplate.removeChild(footerTemplate.firstChild);
   }
+};
+
+const getGenre = (array) => {
+  let arrayEmpty = []
+  for (let index of array) {
+    let urlGenre = `${baseURL}${index.media_type}/${index.id}?${apiKey}${language}`
+    searchAPI(urlGenre)
+      .then((genreReturn) => {
+        arrayEmpty.push({
+          genre: genreReturn.genres,
+        });
+        return templateGenre(arrayGenre);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  }
+  return arrayGenre = arrayEmpty;
 };
 
 function getTrends(){
