@@ -302,6 +302,19 @@ body .itemActive {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+.modal-tmdb-text {
+  font-size: 0.6rem;
+  font-weight: bold;
+  color: #393859a3;
+  text-transform: uppercase;
+  margin: 1rem 0;
+
+}
+
+.modal-tmdb-logo {
+  width: 85px;
+}
+
 .btn-close {
   margin-top: 1rem;
   padding: 0.4rem 1.3rem;
@@ -331,3 +344,5 @@ body .itemActive {
   text-transform: uppercase;
   text-align: center;
 }
+
+

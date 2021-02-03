@@ -38,7 +38,10 @@ export const modalFooter = (() => {
 				<img class="photo-dev" src="./img/lucila.png" alt="foto desenvolvedora Lucila">
 				<figcaption class="name-dev">Lucila</figcaption>
 			</a>  
-    </div>
+	</div>
+	<p class="modal-tmdb-text">Este produto usa a API TMDb, mas não é endossado ou certificado pelo
+		<a id="tmdb-logo-link" href="https://www.themoviedb.org/" target="_blank"><img id="tmdb-logo" class="modal-tmdb-logo"src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_1-8ba2ac31f354005783fab473602c34c3f4fd207150182061e425d366e4f34596.svg" alt="Logo The Movie Database"></a>
+  	.</p> 
     <button id="btn-close" class="btn-close">Voltar</button>  
     `
 
