@@ -5,167 +5,161 @@ Acesse a aplicação aqui: XXXXXXXXXXXXXXLINK
 
 ## Índice
 
-* [Apresentação](#:wave:-apresentação)
-* [Design Thinking](#:bookmark_tabs:-design-thinking)
-    * [Mapeamento](#:female_detective:-mapeamento)
-        * [Investigação](#investigação)
-        * [Entrevistas](#entrevistas)
-        * [Pesquisas](#pesquisa)
-    * [Rascunhos](#:paperclip:-rascunhos)
-    * [Decisão](#:tada:-decisão)
-    * [Prototipagem](#:memo:-prototipagem)
-    * [Testes](#:left_speech_bubble:-testes)
-* [Planejamento](#:muscle:-planejamento)
-* [Usuários](#:dancing_women:-usuários)
-    * [Personas](#personas)
-    * [Histórias de usuário](#histórias-de-usuário)
-* [Desenvolvimento](#:gear:-desenvolvimento)
-* [Pontos de Melhoria](#:construction:-pontos-de-melhoria)
+* [Apresentação](#apresentação)
+* [Design Thinking](#design-thinking)
+   * [Mapeamento](#mapeamento)
+      * [Investigação](#investigação)
+      * [Entrevistas](#entrevistas)
+      * [Pesquisas](#pesquisa)
+   * [Rascunhos](#rascunhos)
+   * [Decisão](#decisão)
+   * [Prototipagem](#prototipagem)
+   * [Testes](#testes)
+* [Planejamento](#planejamento)
+* [Usuários](#usuários)
+   * [Personas](#personas)
+   * [Histórias de usuário](#histórias-de-usuário)
+* [Desenvolvimento](#desenvolvimento)
+* [Pontos de Melhoria](#pontos-de-melhoria)
 * [Agradecimentos](#agradecimentos)
-* [Devas](#:octocat:-devas)
+* [Devas](#devas)
 
 ***
 
-## :wave: Apresentação
+## Apresentação
 
-*Onde Assistir ?* é uma aplicação web que tem por objetivo auxiliar os apaixonados por séries e filmes a encontrar exatamente qual (is) streaming (s) de vídeo oferece (m) o título desejado, de forma a otimizar o tempo gasto pesquisando em cada plataforma se possui o título ou não, em seu catálogo. <br>
-Este projeto foi desenvolvido por estudantes de programação Front End, através de um Hackathon proposto durante o bootcamp da <a href=“www.github.com/Laboratoria“>Laboratória</a>, com a finalidade de aprendizagem e enriquecimento de conhecimento das alunas.
+:wave: *Onde Assistir ?* é uma aplicação web que tem por objetivo auxiliar os apaixonados por séries e filmes a encontrar exatamente qual (is) streaming (s) de vídeo oferece (m) o título desejado, de forma a otimizar o tempo gasto pesquisando em cada plataforma se possui o título ou não, em seu catálogo. Este projeto foi desenvolvido por estudantes de programação Front End, através de um Hackathon proposto durante o bootcamp da <a href=“www.github.com/Laboratoria“>Laboratória</a>, com a finalidade de aprendizagem e enriquecimento de conhecimento das alunas.
 
-## :bookmark_tabs: Design Thinking 
+## Design Thinking 
 
-Para desenhar este projeto, utilizamos a abordagem Design Thinking, exemplificado através do fluxograma:
+:bookmark_tabs: Para desenhar este projeto, utilizamos a abordagem Design Thinking, exemplificado através do fluxograma:
 
-![](/src/img/DesignerSprint.png)
+![](/src/img/readme/DesignerSprint.png)
 
-### :female_detective: Mapeamento
+### Mapeamento
 
-O mapeamento foi realizado com 3 processos, Investigação, Entrevistas e Pesquisa.
+:female_detective: O mapeamento foi realizado com 3 processos, Investigação, Entrevistas e Pesquisa.
 
 #### Investigação 
 
-Realizando a investigação na temática de Streaming de vídeos encontramos diversas insatisfações dos usuários.
+:pushpin: Realizando a investigação na temática de Streaming de vídeos encontramos diversas insatisfações dos usuários.
 
-![](/src/img/insatisfações-usuarios.gif)
+![](/src/img/readme/insatisfações-usuarios.gif)
 
 #### Entrevistas
 
-Com objetivo de identificar e caracterizar os problemas dos usuários de streaming de vídeos, realizamos 5 entrevistas individuais.
+:ticket: Com objetivo de identificar e caracterizar os problemas dos usuários de streaming de vídeos, realizamos 5 entrevistas individuais.
 
-![](/src/img/entrevistas2.jpg)</br>
-![](/src/img/entrevistas1.jpg)
+![](/src/img/readme/entrevistas2.jpg)</br>
+![](/src/img/readme/entrevistas1.jpg)
 
 #### Pesquisa
 
-Realizamos pesquisa de mercado através do Google Forms para identificar a amplitude e caracterização do nosso público alvo, verificamos que a maioria se encontra na faixa etária entre 19 e 39 anos e que se identifica ao gênero feminino, conforme gráficos.
+:chart_with_upwards_trend: Realizamos pesquisa de mercado através do Google Forms para identificar a amplitude e caracterização do nosso público alvo, verificamos que a maioria se encontra na faixa etária entre 19 e 39 anos e que se identifica ao gênero feminino, conforme gráficos.
 
-![](/src/img/genero.jpeg)</br>
-![](/src/img/idade.jpeg)
+![](/src/img/readme/genero.jpeg)</br>
+![](/src/img/readme/idade.jpeg)
 
 As plataformas que mais utilizadas são Netflix, Amazon Prime Video, Disney +, Globoplay, Telecine e HBO Go, nesta ordem.
 
-![](/src/img/plataforma-utilizada.jpeg)
+![](/src/img/readme/plataforma-utilizada.jpeg)
 
 Ao perguntar a respeito da funcionalidade da aplicação, a maioria dos respondentes se mostrou interessada
 
-![](/src/img/respostas-pesquisas.gif)
+![](/src/img/readme/respostas-pesquisas.gif)
 
-### :paperclip: Rascunhos
+### Rascunhos
 
-Realizamos Brainstorming e organização de idéias pela ferramento Miro, nele separamos as problemáticas apresentadas e soluções sugeridas pelos usuários na etapa de mapeamento
+:paperclip: Realizamos Brainstorming e organização de idéias pela ferramento Miro, nele separamos as problemáticas apresentadas e soluções sugeridas pelos usuários na etapa de mapeamento
 
-![](/src/img/problemas-entrevistas.jpg)</br>
-![](/src/img/forms.jpg)
+![](/src/img/readme/problemas-entrevistas.jpg)</br>
+![](/src/img/readme/forms.jpg)
 
-### :tada: Decisão 
+### Decisão 
 
-Então tomamos a decisão de atacar a problematica de apresentar ao leitor quais streamings dispoem de cada título e montamos nosso Briefing e KanBan de background do nosso produto
+:tada: Então tomamos a decisão de atacar a problematica de apresentar ao leitor quais streamings dispoem de cada título e montamos nosso Briefing e KanBan de background do nosso produto
 
 XXXXXXXXXXXXXXXXXXXXXXXXX PRINT KANBAN
 
 
-### :memo: Prototipagem
+### Prototipagem
 
-Inicialmente modelamos 2 protótipos de baixa qualidade realizados em papel
+:memo: Inicialmente modelamos 2 protótipos de baixa qualidade realizados em papel
 
-![](/src/img/baixa.fidelidade.jpeg)</br>
-![](/src/img/baixa.fidelidade2.jpeg)
+![](/src/img/readme/baixa.fidelidade.jpeg)</br>
+![](/src/img/readme/baixa.fidelidade2.jpeg)
 
 
 Então mesclamos as características positivas de ambos e finalizamos o modelo final de protótipo de baixa fidelidade e o resultado foi este
 
-![](/src/img/baixa.fidelidade3.jpeg)
+![](/src/img/readme/baixa.fidelidade3.jpeg)
 
 A partir dele, criamos a primeira versão do protótipo de média fidelidade que pode ser acessado <a href=“www.bit.ly/prototipo-streaming“>aqui</a>
 
 O protótipo definitivo foi finalizado após os testes de usabilidade e implementado mudanças a partir do feedback dos usuários realizados com prototipo anterior, pode ser acessado <a href=“www.bit.ly/onde-assistir-teste2“>aqui</a>
 
-### :left_speech_bubble: Testes
+### Testes
 
-Com o feedback dos testes de usabilidade percebemos os seguintes problemas, e propomos as respectivas soluções:
+:left_speech_bubble: Com o feedback dos testes de usabilidade percebemos os seguintes problemas, e propomos as respectivas soluções:
 
-1. Campo de busca confuso abaixo do menu Séries e Filmes;
-* Solução - Mudar para abaixo do header.
+1. Campo de busca confuso abaixo do menu Séries e Filmes;</br>
+:heavy_check_mark: Solução - Mudar para abaixo do header.
 
-2. Campo de busca em branco, confunde o que é para fazer;
-* Solução - Inserir uma lupa dentro do campo de busca, evidenciando que ali é para fazer as pesquisas.
+2. Campo de busca em branco, confunde o que é para fazer;</br>
+:heavy_check_mark: Solução - Inserir uma lupa dentro do campo de busca, evidenciando que ali é para fazer as pesquisas.
 
-3. Emojis dos botões de classificação difíceis de enxergar;
-* Solução - Aumentar o tamanho dos emojis.
+3. Emojis dos botões de classificação difíceis de enxergar;</br>
+:heavy_check_mark: Solução - Aumentar o tamanho dos emojis.
 
-4. Menu com botões muito grandes;
-* Solução - Reduzir o tamanho do menu.
+4. Menu com botões muito grandes;</br>
+:heavy_check_mark: Solução - Reduzir o tamanho do menu.
 
-5. Ao clicar no botão do menu, a cor do botão clicado muda para cinza claro e onde não foi clicado fica cinza escuro, o que confundiu, pois segundo os testes, os usuários deduziram que onde está mais escuro seria o botão selecionado;
-* Solução - Inveter a cor dos botões.
+5. Ao clicar no botão do menu, a cor do botão clicado muda para cinza claro e onde não foi clicado fica cinza escuro, o que confundiu, pois segundo os testes, os usuários deduziram que onde está mais escuro seria o botão selecionado;</br>
+:heavy_check_mark: Solução - Inveter a cor dos botões.
 
-6. Uuário tentou clicar no ícone de indicação da plataforma, onde não havia nenhum direcionamento e não acontecia nenhum evento ao clicar;
-* Solução - Interligar o link da plataforma ao ícone, para ao clicar, o usuário ser drecionado para a respectiva plataforma.
+6. Uuário tentou clicar no ícone de indicação da plataforma, onde não havia nenhum direcionamento e não acontecia nenhum evento ao clicar;</br>
+:heavy_check_mark: Solução - Interligar o link da plataforma ao ícone, para ao clicar, o usuário ser drecionado para a respectiva plataforma.
 
+## Planejamento
 
-XXXXXXXXXXXXXXX
+:muscle: Utilizamos a ferramenta Trello para separar as tarefas e grupos de trabalhos
 
-## :muscle: Planejamento
+![](/src/img/readme/trello.jpeg)
 
-Utilizamos a ferramenta Trello para separar as tarefas e grupos de trabalhos
+## Usuários
 
-XXXXXXXXXXXXXXX PRINT TRELLO 
-
-## :dancing_women: Usuários
-
-De acordo com a pesquisa e as entrevistas realizadas, definimos as personas e as histórias de usuário que orientaram o desenvolvimento do projeto
+:dancing_women: De acordo com a pesquisa e as entrevistas realizadas, definimos as personas e as histórias de usuário que orientaram o desenvolvimento do projeto
 
 ### Personas
 
 Nossas proto-personas foram modeladas baseando-se na pesquisa realizada e validadas pelas entrevistas individuais
 
-![](/src/img/persona_1.png)
-![](/src/img/persona_2.png)</br>
-![](/src/img/persona_3.png)
-![](/src/img/persona_4.png)
+![](/src/img/readme/persona_1.png)
+![](/src/img/readme/persona_2.png)</br>
+![](/src/img/readme/persona_3.png)
+![](/src/img/readme/persona_4.png)
 
 
 ### Histórias de Usuário
+
+Nas histórias de Usuário que baseamos nossa aplicação são:
 
 1. Eu como usuário quero assistir um determinado filme/série e desejo saber rapidamente em qual plataforma de stream está disponível.
 
 2. Eu como usuário desejo, ao querer assistir um determinado filme ou série, saber atravez de poucos cliques, as informações de gênero, sinopse e os respectivos streamings que está disponível.
 
 
-## :gear: Desenvolvimento
+## Desenvolvimento
 
-Para desenvolvimento deste projeto foi utilizado HTML5, CSS3 e Vanilla JavaScript, utilizando a API fornecida pelo <a href=“www.themoviedb.org“>The movie database (TMDB)</a> com o conceito de Mobile First. 
+:gear: Para desenvolvimento deste projeto foi utilizado HTML5, CSS3 e Vanilla JavaScript, utilizando a API fornecida pelo <a href=“www.themoviedb.org“>The movie database (TMDB)</a> com o conceito de Mobile First. 
 interface finalizada da aplicação :
 
 
 
-XXXXX GIF DO SITE FUNCIONANDO
 
+## Pontos de melhoria
 
-
-
-## :construction: Pontos de melhoria
-
-Definimos que para os próximos passos sejam feitos os seguintes aprimoramentos:
+:construction: Definimos que para os próximos passos sejam feitos os seguintes aprimoramentos:
 
 
 
@@ -175,9 +169,9 @@ Definimos que para os próximos passos sejam feitos os seguintes aprimoramentos:
 
 
 
-## :octocat: Devas
+## Devas
 
-Este projeto foi desenvolvido com muito carinho pelas desenvolvedoras:
+:octocat: Este projeto foi desenvolvido com muito carinho pelas desenvolvedoras:
 
 :princess: <a href=“www.github.com/BiancaSherika“> Bianca Shérika</a><br/>
 :princess: <a href=“www.github.com/cbalieiro>Camila Oliveira</a><br/>
