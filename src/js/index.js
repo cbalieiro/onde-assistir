@@ -116,7 +116,7 @@ tv.addEventListener('click', (event) => {
   movie.classList.remove('nav-item-selected');
   const buttonSelector = document.querySelectorAll('.genre-btn');
   buttonSelector.forEach(button => {
-    button.addEventListener('click', event => {event.preventDefault();
+    button.addEventListener('click', event => {
       event.preventDefault();
       clearDOM();
       const genrerType = button.attributes.value.nodeValue;
@@ -129,6 +129,7 @@ footerEvent.addEventListener('click', (event) => {
   event.preventDefault();
   clearFooter();
   modalFooter();
+  footer.classList.add('hidden');
 })
 
 
