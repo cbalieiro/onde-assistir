@@ -1,7 +1,7 @@
 
 # :tv: Onde Assistir ?
 
-Acesse a aplicação aqui: XXXXXXXXXXXXXXLINK
+Acesse a aplicação aqui: https://cbalieiro.github.io/onde-assistir/
 
 ## Índice
 
