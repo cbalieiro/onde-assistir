@@ -28,7 +28,7 @@ Acesse a aplicação aqui: https://cbalieiro.github.io/onde-assistir/
 
 ## Apresentação
 
-:wave: *Onde Assistir ?* é uma aplicação web que tem por objetivo auxiliar os apaixonados por séries e filmes a encontrar exatamente qual (is) streaming (s) de vídeo oferece (m) o título desejado, de forma a otimizar o tempo gasto pesquisando em cada plataforma se possui o título ou não, em seu catálogo. Este projeto foi desenvolvido por estudantes de programação Front End, através de um Hackathon proposto durante o bootcamp da Laboratória, com a finalidade de aprendizagem e enriquecimento de conhecimento das alunas.
+:wave: *Onde Assistir?* é uma aplicação web que tem por objetivo auxiliar os apaixonados por séries e filmes a encontrar exatamente qual (is) streaming (s) de vídeo oferece (m) o título desejado, de forma a otimizar o tempo gasto pesquisando em cada plataforma se possui o título ou não, em seu catálogo. Este projeto foi desenvolvido por estudantes de programação Front End, através de um Hackathon proposto durante o bootcamp da Laboratória, com a finalidade de aprendizagem e enriquecimento de conhecimento das alunas.
 
 ## Design Thinking 
 
