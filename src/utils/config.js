@@ -8,4 +8,7 @@ export default {
       searchMulti: "search/multi?",
       watchProviders: "watch/providers?",
     }
-  };
+};
+
+export const dataTrends = "https://api.themoviedb.org/3/trending/all/week?api_key=9c2c51641b3f3b8d35ac3160b94bf80d";
+
