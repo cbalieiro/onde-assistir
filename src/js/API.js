@@ -7,6 +7,4 @@ export const searchAPI = async arg => {
       console.log(err);
   }
 }
-
-
-    
+ 
