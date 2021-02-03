@@ -124,6 +124,7 @@ footerEvent.addEventListener('click', (event) => {
   event.preventDefault();
   clearFooter();
   modalFooter();
+  footer.classList.add('hidden');
 })
 
 
