@@ -63,7 +63,6 @@ export const templateProvider = (array) => {
   }
 }
 
-
 export const filterBy = ((dataType, arraySearch, arrayProvider) => {
   const filter = filterMethod(arraySearch, "==", dataType.id)
   templateAllCards(filter);
@@ -82,7 +81,7 @@ export const filterByGenrer = ((dataType, genrerType, arraySearch, arrayProvider
     message.classList.add('section-genres');
     errorMessage.appendChild(message)
     message.innerHTML = `    
-      <div>Não há lançamentos de séries no genero selecionado.</div>
+      <p class="no-titles-msg">Nesta semana não há lançamentos de títulos no gênero escolhido</p>
     ` 
   }
 
