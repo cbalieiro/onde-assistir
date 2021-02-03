@@ -66,7 +66,7 @@ As plataformas que mais utilizadas são Netflix, Amazon Prime Video, Disney +, G
 
 Ao perguntar a respeito da funcionalidade da aplicação, a maioria dos respondentes se mostrou interessada
 
-![](/src/img/readme/respostas-pesquisas.gif)
+![](/src/img/readme/respostas-pesquisa.gif)
 
 ### Rascunhos
 
