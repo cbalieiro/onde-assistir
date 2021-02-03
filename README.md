@@ -28,7 +28,7 @@ Acesse a aplicação aqui: https://cbalieiro.github.io/onde-assistir/
 
 ## Apresentação
 
-:wave: *Onde Assistir ?* é uma aplicação web que tem por objetivo auxiliar os apaixonados por séries e filmes a encontrar exatamente qual (is) streaming (s) de vídeo oferece (m) o título desejado, de forma a otimizar o tempo gasto pesquisando em cada plataforma se possui o título ou não, em seu catálogo. Este projeto foi desenvolvido por estudantes de programação Front End, através de um Hackathon proposto durante o bootcamp da <a href=“www.github.com/Laboratoria“>Laboratória</a>, com a finalidade de aprendizagem e enriquecimento de conhecimento das alunas.
+:wave: *Onde Assistir ?* é uma aplicação web que tem por objetivo auxiliar os apaixonados por séries e filmes a encontrar exatamente qual (is) streaming (s) de vídeo oferece (m) o título desejado, de forma a otimizar o tempo gasto pesquisando em cada plataforma se possui o título ou não, em seu catálogo. Este projeto foi desenvolvido por estudantes de programação Front End, através de um Hackathon proposto durante o bootcamp da Laboratória, com a finalidade de aprendizagem e enriquecimento de conhecimento das alunas.
 
 ## Design Thinking 
 
@@ -93,9 +93,9 @@ Então mesclamos as características positivas de ambos e finalizamos o modelo f
 
 ![](/src/img/readme/baixa.fidelidade3.jpeg)
 
-A partir dele, criamos a primeira versão do protótipo de média fidelidade que pode ser acessado <a href=“http://bit.ly/prototipo-streaming“>aqui</a>
+A partir dele, criamos a primeira versão do protótipo de média fidelidade que pode ser acessado aqui: http://bit.ly/prototipo-streaming
 
-O protótipo definitivo foi finalizado após os testes de usabilidade e implementado mudanças a partir do feedback dos usuários realizados com prototipo anterior, pode ser acessado <a href=“http://bit.ly/onde-assistir-teste2“>aqui</a>
+O protótipo definitivo foi finalizado após os testes de usabilidade e implementado mudanças a partir do feedback dos usuários realizados com prototipo anterior, pode ser acessado aqui: http://bit.ly/onde-assistir-teste2
 
 ### Testes
 
@@ -150,7 +150,7 @@ Nas histórias de Usuário que baseamos nossa aplicação são:
 
 ## Desenvolvimento
 
-:gear: Para desenvolvimento deste projeto foi utilizado HTML5, CSS3 e Vanilla JavaScript, utilizando a API fornecida pelo <a href=“www.themoviedb.org“>The movie database (TMDB)</a> com o conceito de Mobile First. 
+:gear: Para desenvolvimento deste projeto foi utilizado HTML5, CSS3 e Vanilla JavaScript, utilizando a API fornecida pelo The movie database (TMDB) com o conceito de Mobile First. 
 interface finalizada da aplicação :
 
 
