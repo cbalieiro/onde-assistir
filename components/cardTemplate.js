@@ -21,7 +21,7 @@ export const templateAllCards = (array) => {
     cards.appendChild(card)
     card.innerHTML = `
       <img id="teste" class="card-poster" src="${baseImageURL}${imageSize}${index.poster_path}">
-      <div id="${index.id}" class="provider-wrap"></div>
+      <div id="${index.id}" class="availability-wrap"></div>
     `;
     const clickModal = card.querySelector("#teste")
     clickModal.addEventListener('click', (event) =>{
@@ -47,8 +47,9 @@ export const templateProvider = (array) => {
         arrayflatrate.forEach(element => {
           let linksPath = links(element.logo_path);
           let cardsProviders = document.getElementById(`${index.id}`);
-          cardsProviders.classList.add('provider-wrap');
+          cardsProviders.classList.add('availability-wrap');
           let cardProvider = document.createElement('div');
+          cardProvider.classList.add('provider-wrap');
           cardsProviders.appendChild(cardProvider);
           cardProvider.innerHTML =
             `<a href="${linksPath}" target="_blank"> 
@@ -61,7 +62,6 @@ export const templateProvider = (array) => {
     }
   }
 }
-
 
 export const filterBy = ((dataType, arraySearch, arrayProvider) => {
   const filter = filterMethod(arraySearch, "==", dataType.id)
@@ -81,7 +81,7 @@ export const filterByGenrer = ((dataType, genrerType, arraySearch, arrayProvider
     message.classList.add('section-genres');
     errorMessage.appendChild(message)
     message.innerHTML = `    
-      <div>Não há lançamentos de séries no genero selecionado.</div>
+      <p class="no-titles-msg">Nesta semana não há lançamentos de títulos no gênero escolhido</p>
     ` 
   }
 
