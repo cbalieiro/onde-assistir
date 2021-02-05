@@ -151,21 +151,13 @@ Nas histórias de Usuário que baseamos nossa aplicação são:
 ## Desenvolvimento
 
 :gear: Para desenvolvimento deste projeto foi utilizado HTML5, CSS3 e Vanilla JavaScript, utilizando a API fornecida pelo The movie database (TMDB) com o conceito de Mobile First. 
-interface finalizada da aplicação :
-
-
-
 
 ## Pontos de melhoria
 
 :construction: Definimos que para os próximos passos sejam feitos os seguintes aprimoramentos:
 
-
-
-
-## Agradecimentos
-
-
+- Criar gênero *outros* que mostre somente títulos que não tenham nenhum dos generos já listados no site
+- Adaptar o redirecionamento de streaming direto para pagina do título na plataforma clicada
 
 
 ## Devas
