@@ -1,169 +1,163 @@
-import data, {dataTrends} from '../utils/config.js';
-import { filterBy, filterByGenrer } from '../components/cardTemplate.js';
-import { templateButtonsMovie } from '../components/buttonsMovie.js';
-import { templateButtonsSeries } from '../components/buttonsSeries.js';
+import { completedSearchUrl, createCompletedGenreUrl, createCompletedWatchProvidersUrl, trendingDataUrl } from '../utils/config.js';
+import { fetchDataFromAPI } from '../js/fetchDataFromAPI.js';
 import {
-  searchAPI
-} from './API.js';
-import {
-  templateAllCards,
+  createAllCardElements,
   templateProvider
 } from '../components/cardTemplate.js';
-import { modalFooter } from '../components/modalfooter.js';
-import { filterMethod } from "./data.js"
+import { filterByMediaType, handleError } from "../js/data.js";
+import { filterBy, filterByGenrer } from '../components/cardTemplate.js'
+
 import { templateGenre } from '../components/modalCards.js';
+import { modalFooter } from '../components/modalfooter.js';
+import { templateButtonsMovie } from '../components/buttonsMovie.js';
+import { templateButtonsSeries } from '../components/buttonsSeries.js'
 
-const dbObject = data.dataBase;
-const {
-  apiKey,
-  baseURL,
-  baseImageURL,
-  imageSize,
-  language,
-  searchMulti,
-  watchProviders,
-} = dbObject;
-
-let arrayMovieAndTvNotNull = [];
-let arrayProviders = [];
-let arrayGenre = []
+let validMediaCollection = [];
+let validProvidersCollection = [];
+let validGenreCollection = []
 let arrayTrends = [];
 
-const inputUser = document.querySelector("#search-input");
-const movie = document.getElementById("movie");
-const tv = document.getElementById("tv");
-const footerEvent = document.getElementById('footer');
+const queryUserInputElement = document.querySelector("#search-input");
+const selectedMovieElement = document.getElementById("movie");
+const selectedTVElement = document.getElementById("tv");
+const selectedFooterElement = document.getElementById('footer');
 
-function clearDOM() {
-  let cards = document.querySelector('#page-main')
-  while (cards.firstChild) {
-    cards.removeChild(cards.firstChild);
+function clearPageMainContent() {
+  let cards = document.querySelector("#page-main");
+  if (cards) {
+    while (cards.firstChild) {
+      cards.removeChild(cards.firstChild);
+    }
+  }
+}
+
+function resetFooterContent() {
+  let footerModalElement = document.querySelector('#footer-modal');
+  if (footerModalElement) {
+    while (footerModalElement.firstChild) {
+      footerModalElement.removeChild(footerModalElement.firstChild);
+    }
   }
 };
 
-const getWatchProvider = (array) => {
-  let arrayEmpty = []
-    for (let index of array) {
-    let urlProvider = `${baseURL}${index.media_type}/${index.id}/${watchProviders}${apiKey}`
-    searchAPI(urlProvider)
-      .then((searchReturn) => {
-        arrayEmpty.push({
-          id: searchReturn.id,
-          results: searchReturn.results
-        });
-        return templateProvider(arrayProviders);
-      })
-      .catch((error) => {
-        console.log(error);
-      })
+const getAvailableWatchProviders = async (validMediaCollectionData) => {
+  let initializedArray = [];
+  for (let index of validMediaCollectionData) {
+    let completedWatchProvidersUrl = createCompletedWatchProvidersUrl(index.media_type, index.id);
+    try {
+      const apiThemoviedbResponse = await fetchDataFromAPI(completedWatchProvidersUrl)
+      initializedArray.push({
+        id: apiThemoviedbResponse.id,
+        results: apiThemoviedbResponse.results
+      });
+      return templateProvider(validProvidersCollection);
+    } catch (error) {
+      handleError(error);
+    }
   }
-  return arrayProviders = arrayEmpty;
+  return validProvidersCollection = initializedArray;
 };
 
-inputUser.addEventListener("keyup", () => {
-  clearDOM()
-  let inputValue = inputUser.value.toLowerCase();
-  let search = `&query=${inputValue.replaceAll(' ', '%20')}`;
-  let urlSearch = `${baseURL}${searchMulti}${apiKey}${language}${search}`;
-  searchAPI(urlSearch)
-    .then((data) => {
-      let arrayFilter = data.results
-      let arrayMovieAndTv = filterMethod(arrayFilter,"!==","person");
-      arrayMovieAndTvNotNull = filterMethod(arrayMovieAndTv,"!==",null);
-      templateAllCards(arrayMovieAndTvNotNull)
-      return arrayMovieAndTvNotNull;
-    })
-    .then((data) => {
-      return getWatchProvider(data)
-  
-    })
-    .then((data) =>{
-      return getGenre(data)
-    })
-    return arrayMovieAndTvNotNull = [];
-})
+const getAvailableGenre = async (validMediaCollectionData) => {
+  let initializedArray = []
+  for (let index of validMediaCollectionData) {
+    let completedGenreUrl = createCompletedGenreUrl(index.media_type, index.id)
+    try {
+      const apiThemoviedbResponse = await fetchDataFromAPI(completedGenreUrl)
+      initializedArray.push({
+        genre: apiThemoviedbResponse.genres,
+      });
+      return templateGenre(validGenreCollection);
+    } catch (error) {
+      handleError(error);
+    }
+  }
+  return validGenreCollection = initializedArray;
+};
 
-movie.addEventListener('click', (event) => {
+
+queryUserInputElement.addEventListener("keyup", async () => {
+  clearPageMainContent();
+  try {
+    let formattedSearchQuery = `&query=${queryUserInputElement.value.toLowerCase().replace(/ /g, "%20")}`;
+    let urlSearch = `${completedSearchUrl}${formattedSearchQuery}`;
+    const apiThemoviedbResponse = await fetchDataFromAPI(urlSearch);
+    if (!apiThemoviedbResponse) {
+      return validMediaCollection = []
+    }
+    const { results } = apiThemoviedbResponse;
+    validMediaCollection = filterByMediaType(results, {
+      exclude: ["person", null]
+    });
+
+    createAllCardElements(validMediaCollection);
+    getAvailableWatchProviders(validMediaCollection)
+    getAvailableGenre(validMediaCollection)
+    return validMediaCollection;
+  } catch (error) {
+    handleError(error);
+  }
+});
+
+selectedMovieElement.addEventListener('click', async (event) => {
   event.preventDefault();
-  getTrends();
-  clearDOM()
-  if (arrayMovieAndTvNotNull.length === 0) {
+  await getTrends();
+  clearPageMainContent()
+  if (validMediaCollection.length === 0) {
     templateButtonsMovie();
   }
-  filterBy(movie, arrayMovieAndTvNotNull, arrayProviders)
-  movie.classList.add('nav-item-selected');
-  tv.classList.remove('nav-item-selected');
+  filterBy(selectedMovieElement, validMediaCollection, validProvidersCollection)
+  selectedMovieElement.classList.add('nav-item-selected');
+  selectedTVElement.classList.remove('nav-item-selected');
   const buttonSelector = document.querySelectorAll('.genre-btn');
   buttonSelector.forEach(button => {
     button.addEventListener('click', event => {
       event.preventDefault();
-      clearDOM();
+      clearPageMainContent();
       const genrerType = button.attributes.value.nodeValue;
-      filterByGenrer(movie, genrerType, arrayTrends, arrayProviders);
+      filterByGenrer(selectedMovieElement, genrerType, arrayTrends, validProvidersCollection);
     })
   });
 });
 
-tv.addEventListener('click', (event) => {
+selectedTVElement.addEventListener('click', async (event) => {
   event.preventDefault();
-  getTrends();
-  clearDOM();
-  if (arrayMovieAndTvNotNull.length === 0) {
+  await getTrends();
+  clearPageMainContent();
+  if (validMediaCollection.length === 0) {
     templateButtonsSeries();
   }
-  filterBy(tv, arrayMovieAndTvNotNull, arrayProviders)
-  tv.classList.add('nav-item-selected');
-  movie.classList.remove('nav-item-selected');
+  filterBy(selectedTVElement, validMediaCollection, validProvidersCollection)
+  selectedTVElement.classList.add('nav-item-selected');
+  selectedMovieElement.classList.remove('nav-item-selected');
   const buttonSelector = document.querySelectorAll('.genre-btn');
   buttonSelector.forEach(button => {
     button.addEventListener('click', event => {
       event.preventDefault();
-      clearDOM();
+      clearPageMainContent();
       const genrerType = button.attributes.value.nodeValue;
-      filterByGenrer(tv, genrerType , arrayTrends, arrayProviders);
+      filterByGenrer(selectedTVElement, genrerType, arrayTrends, arrayProviders);
     })
   });
 });
 
-footerEvent.addEventListener('click', (event) => {
+selectedFooterElement.addEventListener('click', (event) => {
   event.preventDefault();
-  clearFooter();
+  resetFooterContent()
   modalFooter();
   footer.classList.add('hidden');
 })
 
-
-function clearFooter() {
-  let footerTemplate = document.querySelector('#footer-modal');
-  while (footerTemplate.firstChild) {
-    footerTemplate.removeChild(footerTemplate.firstChild);
+async function getTrends() {
+  const apiThemoviedbResponse = await fetchDataFromAPI(trendingDataUrl);
+  if (!apiThemoviedbResponse) {
+    return [];
+  } else {
+    const { results } = apiThemoviedbResponse;
+    let arrayMovieAndTv = filterByMediaType(results, {
+      exclude: ["person", null],
+    });
+    arrayTrends = arrayMovieAndTv;
+    return arrayMovieAndTv;
   }
-};
-
-const getGenre = (array) => {
-  let arrayEmpty = []
-  for (let index of array) {
-    let urlGenre = `${baseURL}${index.media_type}/${index.id}?${apiKey}${language}`
-    searchAPI(urlGenre)
-      .then((genreReturn) => {
-        arrayEmpty.push({
-          genre: genreReturn.genres,
-        });
-        return templateGenre(arrayGenre);
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-  }
-  return arrayGenre = arrayEmpty;
-};
-
-function getTrends(){
-  searchAPI(dataTrends)
-  .then((data) => {
-    let arrayFilter = data.results
-    let arrayMovieAndTv = filterMethod(arrayFilter,"!==","person");
-    arrayTrends = filterMethod(arrayMovieAndTv,"!==",null);
-    return arrayTrends;
-  })
 }

@@ -1,26 +1,16 @@
-import data from '../utils/config.js'
+import { tmdbConfig } from '../utils/config.js'
 import { modalCards } from "../components/modalCards.js"
-import { filterMethod, links, filterGenrer } from "../js/data.js"
+import { filterByMediaType, links, filterByMediaGenrer } from "../js/data.js"
 
-const dbObject = data.dataBase;
-const {
-  apiKey,
-  baseURL,
-  baseImageURL,
-  imageSize,
-  language,
-  searchMulti,
-  watchProviders
-} = dbObject;
 
-export const templateAllCards = (array) => {
+export const createAllCardElements = (array) => {
   for (let index of array) {
     let cards = document.querySelector("#page-main");
     let card = document.createElement("div");
     card.classList.add('card-title')
     cards.appendChild(card)
     card.innerHTML = `
-      <img id="teste" class="card-poster" src="${baseImageURL}${imageSize}${index.poster_path}">
+      <img id="teste" class="card-poster" src="${tmdbConfig.baseImageURL}${tmdbConfig.imageResolutionSize}${index.poster_path}">
       <div id="${index.id}" class="availability-wrap"></div>
     `;
     const clickModal = card.querySelector("#teste")
@@ -53,7 +43,7 @@ export const templateProvider = (array) => {
           cardsProviders.appendChild(cardProvider);
           cardProvider.innerHTML =
             `<a href="${linksPath}" target="_blank"> 
-              <img class="provider-img" src="${baseImageURL}${imageSize}${element.logo_path}">
+              <img class="provider-img" src="${tmdbConfig.baseImageURL}${tmdbConfig.imageResolutionSize}${element.logo_path}">
             </a>
             `;
           element;
@@ -64,16 +54,22 @@ export const templateProvider = (array) => {
 }
 
 export const filterBy = ((dataType, arraySearch, arrayProvider) => {
-  const filter = filterMethod(arraySearch, "==", dataType.id)
-  templateAllCards(filter);
+  const filter = filterByMediaType(arraySearch, {
+    include: [ dataType.id],
+  });
+  createAllCardElements(filter);
   templateProvider(arrayProvider);
 });
 
 export const filterByGenrer = ((dataType, genrerType, arraySearch, arrayProvider) => {
-  const filter = filterMethod(arraySearch, "==", dataType.id);
-  const arrayFilterGenrer = filterGenrer(filter, "==", genrerType);
+  const filter =  filterByMediaType(arraySearch, {
+    include: [ dataType.id],
+  });
+  const arrayFilterGenrer = filterByMediaGenrer(filter, {
+    include: [genrerType],
+  });
   if(arrayFilterGenrer.length > 0) {
-    templateAllCards(arrayFilterGenrer);
+    createAllCardElements(arrayFilterGenrer);
     templateProvider(arrayProvider);
   } else {
     let errorMessage = document.querySelector("#page-main");
@@ -84,5 +80,4 @@ export const filterByGenrer = ((dataType, genrerType, arraySearch, arrayProvider
       <p class="no-titles-msg">Nesta semana não há lançamentos de títulos no gênero escolhido.</p>
     ` 
   }
-
 });
