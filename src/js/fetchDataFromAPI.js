@@ -7,9 +7,9 @@ export const fetchDataFromAPI = async url => {
       throw new Error(response.statusText);
     }
     const data = await response.json();
-    // if (!isValidTheMovieDBResponse(data)) {
-    //   throw new Error("Formato inesperado da resposta da API TheMovieDB: " + JSON.stringify(data));
-    // }
+    if (!isValidTheMovieDBResponse(data)) {
+      throw new Error("Formato inesperado da resposta da API TheMovieDB: " + JSON.stringify(data));
+    }
     return data;
   } catch (err) {
     handleError(err);
@@ -20,9 +20,9 @@ export const fetchDataFromAPI = async url => {
 function isValidTheMovieDBResponse(data) {
   return (
     data &&
-    Array.isArray(data.results) &&
+    Array.isArray(data.results) && (
     typeof data.page === 'number' &&
     typeof data.total_pages === 'number' &&
-    typeof data.total_results === 'number'
+    typeof data.total_results === 'number') || (typeof data.id === 'number')
   );
 }
