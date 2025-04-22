@@ -1,14 +1,8 @@
-import data from "../utils/config.js"
-
-const dbObject = data.dataBase;
-const {
-  baseImageURL,
-  imageSize,
-} = dbObject;
+import { tmdbConfig } from '../utils/config.js'
 
 const footer = document.querySelector('#footer');
 
-export const modalCards = (id, poster_path, genre_ids, title, overview, release_date) => {
+export const modalCards = (id, poster_path, _genre_ids, title, overview, _release_date) => {
     let modalTemplate = document.querySelector('.modal-cards');
     let informationCard = document.createElement('section');
     modalTemplate.classList.add('itemActive');
@@ -16,7 +10,7 @@ export const modalCards = (id, poster_path, genre_ids, title, overview, release_
     footer.classList.add('hidden');
     modalTemplate.appendChild(informationCard);
     informationCard.innerHTML = `
-        <img id="${id}" class="modal-poster" src="${baseImageURL}${imageSize}${poster_path}">
+        <img id="${id}" class="modal-poster" src="${tmdbConfig.baseImageURL}${tmdbConfig.imageResolutionSize}${poster_path}">
         <p class="modal-title">${title}</p>
         <p class="modal-overview">${overview}</p>
         <button class="btn-close">Voltar</button>
@@ -33,11 +27,11 @@ export const modalCards = (id, poster_path, genre_ids, title, overview, release_
 };
 
 export const templateGenre = (array) => {
-    array.forEach(element =>{
-        let allGenre = document.getElementById('genre')
-        let genre = document.createElement('div')
-        allGenre.appendChild(genre)
-        genre.innerHTML = `
-        <div>${genre.name}</div>`
-    })
+    array.forEach(function (_element) {
+            let allGenre = document.getElementById('genre');
+            let genre = document.createElement('div');
+            allGenre.appendChild(genre);
+            genre.innerHTML = `
+        <div>${genre.name}</div>`;
+        })
 };

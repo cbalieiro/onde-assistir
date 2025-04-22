@@ -82,7 +82,7 @@ a {
 
 .search-input {
   width: 65vw;
-  background: url(./img/search-icon.png) no-repeat 0.5rem 0.3rem #fff;
+  background: url(./assets/img/search-icon.png) no-repeat 0.5rem 0.3rem #fff;
   border-radius: 3rem;
   border: solid 0.15rem #393859;
   padding: 0.3rem 0.5rem;

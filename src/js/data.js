@@ -1,28 +1,35 @@
-export const filterMethod = (array, operator, arg) => {
-  //console.log(array);
-  switch (operator) {
-    case "==":
-      return array.filter((type) => type.media_type == arg);
-    case "!==":
-      return array.filter((type) => type.media_type !== arg);
-    default:
-      console.log("operador não identificado!");
-  }
+export const handleError = (error) => {
+  console.error("Error:", error);
+  const errorMessage = document.createElement("div");
+  errorMessage.textContent = "Ocorreu um erro. Por favor, tente novamente mais tarde.";
+  errorMessage.style.color = "red";
+  document.body.appendChild(errorMessage);
+}
+
+export const filterByMediaType = (list, options = {}) => {
+  const { exclude = [], include = [] } = options;
+
+  return list.filter((item) => {
+    const type = item.media_type;
+    if (exclude.length && exclude.includes(type)) return false;
+    if (include.length && !include.includes(type)) return false;
+    return true;
+  });
 };
 
-export const filterGenrer = (array, operator, arg) => {
-  switch (operator) {
-    case "==":
-      return array.filter((type) => type.genre_ids.includes(parseInt(arg)));
-    case "!==":
-      return array.filter((type) => !type.genrers_id.includes(parseInt(arg)));
-    default:
-      console.log("operador não identificado!");
-  }
+export const filterByMediaGenrer = (list, options = {}) => {
+  const { exclude = [], include = [] } = options;
+
+  return list.filter((item) => {
+    const type = item.genre_ids;
+    if (exclude.length && exclude.includes(parseInt(type))) return false;
+    if (include.length && !include.includes(parseInt(type))) return false;
+    return true;
+  });
 };
 
-export const links = (arg) => {
-  switch (arg) {
+export const links = (mediaIdentifier) => {
+  switch (mediaIdentifier) {
     case "/68MNrwlkpF7WnmNPXLah69CR5cb.jpg":
       return "https://www.primevideo.com/";
     case "/sVBEF7q7LqjHAWSnKwDbzmr2EMY.jpg":

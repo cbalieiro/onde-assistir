@@ -34,7 +34,7 @@ Acesse a aplicação aqui: https://cbalieiro.github.io/onde-assistir/
 
 :bookmark_tabs: Para desenhar este projeto, utilizamos a abordagem Design Thinking, exemplificado através do fluxograma:
 
-![](/src/img/readme/DesignerSprint.png)
+![](/src/assets/img/readme/DesignerSprint.png)
 
 ### Mapeamento
 
@@ -44,36 +44,36 @@ Acesse a aplicação aqui: https://cbalieiro.github.io/onde-assistir/
 
 :pushpin: Realizando a investigação na temática de Streaming de vídeos encontramos diversas insatisfações dos usuários.
 
-![](/src/img/readme/insatisfações-usuarios.gif)
+![](/src/assets/img/readme/insatisfações-usuarios.gif)
 
 #### Entrevistas
 
 :ticket: Com objetivo de identificar e caracterizar os problemas dos usuários de streaming de vídeos, realizamos 5 entrevistas individuais.
 
-![](/src/img/readme/entrevistas2.jpg)</br>
-![](/src/img/readme/entrevistas1.jpg)
+![](/src/assets/img/readme/entrevistas2.jpg)</br>
+![](/src/assets/img/readme/entrevistas1.jpg)
 
 #### Pesquisa
 
 :chart_with_upwards_trend: Realizamos pesquisa de mercado através do Google Forms para identificar a amplitude e caracterização do nosso público alvo, verificamos que a maioria se encontra na faixa etária entre 19 e 39 anos e que se identifica ao gênero feminino, conforme gráficos.
 
-![](/src/img/readme/genero.jpeg)</br>
-![](/src/img/readme/idade.jpeg)
+![](/src/assets/img/readme/genero.jpeg)</br>
+![](/src/assets/img/readme/idade.jpeg)
 
 As plataformas que mais utilizadas são Netflix, Amazon Prime Video, Disney +, Globoplay, Telecine e HBO Go, nesta ordem.
 
-![](/src/img/readme/plataforma-utilizada.jpeg)
+![](/src/assets/img/readme/plataforma-utilizada.jpeg)
 
 Ao perguntar a respeito da funcionalidade da aplicação, a maioria dos respondentes se mostrou interessada
 
-![](/src/img/readme/respostas-pesquisa.gif)
+![](/src/assets/img/readme/respostas-pesquisa.gif)
 
 ### Rascunhos
 
 :paperclip: Realizamos Brainstorming e organização de idéias pela ferramento Miro, nele separamos as problemáticas apresentadas e soluções sugeridas pelos usuários na etapa de mapeamento
 
-![](/src/img/readme/problemas-entrevistas.jpg)</br>
-![](/src/img/readme/forms.jpg)
+![](/src/assets/img/readme/problemas-entrevistas.jpg)</br>
+![](/src/assets/img/readme/forms.jpg)
 
 ### Decisão 
 
@@ -85,13 +85,13 @@ Ao perguntar a respeito da funcionalidade da aplicação, a maioria dos responde
 
 :memo: Inicialmente modelamos 2 protótipos de baixa qualidade realizados em papel
 
-![](/src/img/readme/baixa.fidelidade.jpeg)</br>
-![](/src/img/readme/baixa.fidelidade2.jpeg)
+![](/src/assets/img/readme/baixa.fidelidade.jpeg)</br>
+![](/src/assets/img/readme/baixa.fidelidade2.jpeg)
 
 
 Então mesclamos as características positivas de ambos e finalizamos o modelo final de protótipo de baixa fidelidade e o resultado foi este
 
-![](/src/img/readme/baixa.fidelidade3.jpeg)
+![](/src/assets/img/readme/baixa.fidelidade3.jpeg)
 
 A partir dele, criamos a primeira versão do protótipo de média fidelidade que pode ser acessado aqui: http://bit.ly/prototipo-streaming
 
@@ -123,7 +123,7 @@ O protótipo definitivo foi finalizado após os testes de usabilidade e implemen
 
 :muscle: Utilizamos a ferramenta Trello para separar as tarefas e grupos de trabalhos
 
-![](/src/img/readme/trello.jpeg)
+![](/src/assets/img/readme/trello.jpeg)
 
 ## Usuários
 
@@ -133,10 +133,10 @@ O protótipo definitivo foi finalizado após os testes de usabilidade e implemen
 
 Nossas proto-personas foram modeladas baseando-se na pesquisa realizada e validadas pelas entrevistas individuais
 
-![](/src/img/readme/Persona_1.png)
-![](/src/img/readme/Persona_2.png)</br>
-![](/src/img/readme/Persona_3.png)
-![](/src/img/readme/Persona_4.png)
+![](/src/assets/img/readme/Persona_1.png)
+![](/src/assets/img/readme/Persona_2.png)</br>
+![](/src/assets/img/readme/Persona_3.png)
+![](/src/assets/img/readme/Persona_4.png)
 
 
 ### Histórias de Usuário

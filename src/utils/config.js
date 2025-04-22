@@ -1,14 +1,25 @@
-export default {
-    dataBase: {
-      apiKey: "api_key=9c2c51641b3f3b8d35ac3160b94bf80d",
-      baseURL: "https://api.themoviedb.org/3/",
-      baseImageURL: "https://image.tmdb.org/t/p/",
-      imageSize: "original",
-      language: "&language=pt-br",
-      searchMulti: "search/multi?",
-      watchProviders: "watch/providers?",
-    }
+const tmdbConfig = {
+  apiKeyForTMDB: `api_key=${"7d43a1e1ea67beefaa2fddb70820fd20"}`,
+  baseURL: "https://api.themoviedb.org/3/",
+  baseImageURL: "https://image.tmdb.org/t/p/",
+  imageResolutionSize: "original",
+  defaultLanguage: "&language=pt-br",
+  multiSearchEndpoint: "search/multi?",
+  mediaProviders: "watch/providers?",
 };
 
-export const dataTrends = "https://api.themoviedb.org/3/trending/all/week?api_key=9c2c51641b3f3b8d35ac3160b94bf80d";
+const trendingDataUrl =
+  "https://api.themoviedb.org/3/trending/all/week?api_key=7d43a1e1ea67beefaa2fddb70820fd20";
 
+const completedSearchUrl = `${tmdbConfig.baseURL}${tmdbConfig.multiSearchEndpoint}${tmdbConfig.apiKeyForTMDB}${tmdbConfig.defaultLanguage}`;
+
+const createCompletedGenreUrl = (media_type, id) => {
+  return `${tmdbConfig.baseURL}${media_type}/${id}?${tmdbConfig.apiKeyForTMDB}${tmdbConfig.defaultLanguage}`;
+};
+
+const createCompletedWatchProvidersUrl = (media_type, id) => {
+  return `${tmdbConfig.baseURL}${media_type}/${id}/${tmdbConfig.mediaProviders}${tmdbConfig.apiKeyForTMDB}`;
+}
+
+
+export { completedSearchUrl, createCompletedGenreUrl, createCompletedWatchProvidersUrl, trendingDataUrl, tmdbConfig };
