@@ -10,7 +10,7 @@ export const createAllCardElements = (array) => {
     card.classList.add('card-title')
     cards.appendChild(card)
     card.innerHTML = `
-      <img id="teste" class="card-poster" src="${tmdbConfig.baseImageURL}${tmdbConfig.imageResolutionSize}${index.poster_path}">
+    <img class="card-poster" src="${tmdbConfig.baseImageURL}${tmdbConfig.imageResolutionSize}${index.poster_path}">
       <div id="${index.id}" class="availability-wrap"></div>
     `;
     const clickModal = card.querySelector("#teste")
